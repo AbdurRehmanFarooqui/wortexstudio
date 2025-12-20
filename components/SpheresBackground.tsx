@@ -4,6 +4,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { MeshWobbleMaterial, OrbitControls } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
+import { useControls } from 'leva'
+
 
 function CameraRig() {
     useFrame((state, delta) => {
@@ -16,11 +18,11 @@ function CameraRig() {
         // const targetY = state.pointer.y * 0.1;
 
         const targetX = state.pointer.x * 0.5; // Multiply to increase range
-        const targetY = -1.2 + state.pointer.y * 0.5;
+        const targetY = -5 + state.pointer.y * 0.5;
         // Smoothly interpolate current camera position to the target
         // 0.1 is the "smoothing" factor (lower is slower/smoother)
-        state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, -targetX, 0.1);
-        state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, -targetY, 0.1);
+        state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, -targetX, 0.2);
+        state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, -targetY, 0.2);
 
         // Optional: Always look at the center (0,0,0) or a specific object
         state.camera.lookAt(0, 0, 0);
@@ -56,7 +58,7 @@ function AbstractMesh1({ position }: { position: [number, number, number] }) {
         </mesh>
     );
 }
-function AbstractMesh({ position }: { position: [number, number, number] }) {
+function AbstractMesh({ position, color }: { position: [number, number, number], color: string }) {
     const mesh = useRef<THREE.Mesh>(null);
     const [x, y, z] = position;
     useFrame((state) => {
@@ -65,114 +67,81 @@ function AbstractMesh({ position }: { position: [number, number, number] }) {
         // smooth subtle parallax
         // mesh.current.rotation.y += (pointer.x * 0.6 - mesh.current.rotation.y) * 0.05;
         // mesh.current.rotation.x += (pointer.y * 0.6 - mesh.current.rotation.x) * 0.05;
-        mesh.current.position.y = y + (Math.sin(state.clock.elapsedTime + x) * 0.2);
+        // mesh.current.position.y = y + (Math.sin(state.clock.elapsedTime + x) * 0.2);
         // mesh.current.position.y = y + (Math.sin(state.clock.elapsedTime + x+z) * 0.2);
 
-        // mesh.current.position.y = 0.1 * Math.sin(state.clock.elapsedTime + position[0])
+        mesh.current.position.y = 0.1 * Math.sin(state.clock.elapsedTime + z)
     });
-    console.log(position);
+    // console.log(position);
     return (
         <mesh ref={mesh} position={position}>
-            <sphereGeometry args={[0.15, 2, 2]} />
+            <sphereGeometry args={[0.15, 12, 12]} />
             <meshStandardMaterial
-                color="#6366f1"
-            // roughness={0.25}
-            // metalness={0.85}
+                // color="#181818"
+                // color="#ffffff"
+                // color="#1ecd84"
+                // color="#c0bfff"
+                color={color}
+                roughness={0.9}
+            // metalness={0.1}
             // wireframe
             />
-            <MeshWobbleMaterial attach="material" factor={3} speed={1.0} wireframe />
+            {/* <MeshWobbleMaterial attach="material" factor={3} speed={1.0} wireframe /> */}
         </mesh>
     );
 }
-const gridXstart = 20;
-const gridXend = -20;
-const gridZstart = 3;
-const gridZend = -30;
-var key = 1
-// const spacing = 0.8;
-const components: React.ReactNode[] = [];
-for (let i = gridXend; i <= gridXstart; i++) {
-    for (let j = gridZend; j <= gridZstart; j++) {
-        key++;
-        components.push(<AbstractMesh key={key} position={[i, -1, j]} />);
+
+const environmentMap = (color: string) => {
+    const gridZstart = 4;
+    const gridZend = -16;
+    var key = 1
+    var gridX = 4
+
+    const components: React.ReactNode[] = [];
+    for (let j = gridZstart; j >= gridZend; j--) {
+
+        if (j % 2 == 0) {
+            for (let i = -gridX; i <= gridX; i++) {
+                key++;
+                components.push(<AbstractMesh key={key} position={[i, -1, j]} color={color} />);
+            }
+        }
+        else {
+            for (let i = -gridX + 1; i <= gridX; i++) {
+                key++;
+                components.push(<AbstractMesh key={key} position={[i, -1, j]} color={color} />);
+            }
+        }
+        gridX <= 9 ? gridX += 0.5 : gridX = 9;
+
     }
+    return components;
 }
 // spacing += { index - Math.floor(gridSize / 2)
 export default function HeroBackground() {
+    const { meshColor, lightColor } = useControls({ meshColor: '#ffffff', lightColor: '#ffffff' })
+    const components = environmentMap(meshColor);
     return (
         <Canvas
-            camera={{ position: [0, 1.2, 6], fov: 50, rotation: [0, 0, 0] }}
+            camera={{ position: [0, 2, 6], fov: 50, rotation: [0, 0, 0] }}
             style={{
                 position: "absolute",
                 inset: 0,
-                // zIndex: -1,
             }}
             dpr={[1, 1.5]}
         >
             <CameraRig />
-            <ambientLight intensity={0.6} />
-            <directionalLight position={[6, 6, 6]} intensity={1.2} />
-            {/* <pointLight position={[-6, -6, -6]} intensity={0.6} /> */}
+            {/* <ambientLight intensity={1} /> */}
+            {/* <directionalLight position={[6, 6, 6]} intensity={3} /> */}
+            {/* <pointLight position={[0, 2, 6]} intensity={100} /> */}
+            <spotLight position={[0, 2, 6]} intensity={25}
+                angle={Math.PI / 4}
+                penumbra={1}
+                decay={2}
+                color={lightColor}
+            />
 
             {components}
-
-            {/* 
-            {Array.from({ length: gridSize }, (_, index) => (
-
-                Array.from({ length: gridSize }, (_, index) => (
-                    <AbstractMesh position={[ index-gridSize/2, -1, -0.8]} />
-                ))
-
-            ))} */}
-            {/* <AbstractMesh position={[0, -1, -0.8]} />
-            <AbstractMesh position={[0, -1, -1.6]} />
-            <AbstractMesh position={[0, -1, -2.4]} />
-            <AbstractMesh position={[0, -1, -3.2]} />
-            <AbstractMesh position={[0, -1, 0]} />
-            <AbstractMesh position={[0, -1, 0.8]} />
-            <AbstractMesh position={[0, -1, 1.6]} />
-            <AbstractMesh position={[0, -1, 2.4]} />
-            <AbstractMesh position={[0, -1, 3.2]} />
-
-            <AbstractMesh position={[1, -1, -0.8]} />
-            <AbstractMesh position={[1, -1, -1.6]} />
-            <AbstractMesh position={[1, -1, -2.4]} />
-            <AbstractMesh position={[1, -1, -3.2]} />
-            <AbstractMesh position={[1, -1, 0]} />
-            <AbstractMesh position={[1, -1, 0.8]} />
-            <AbstractMesh position={[1, -1, 1.6]} />
-            <AbstractMesh position={[1, -1, 2.4]} />
-            <AbstractMesh position={[1, -1, 3.2]} />
-
-            <AbstractMesh position={[2, -1, -0.8]} />
-            <AbstractMesh position={[2, -1, -1.6]} />
-            <AbstractMesh position={[2, -1, -2.4]} />
-            <AbstractMesh position={[2, -1, -3.2]} />
-            <AbstractMesh position={[2, -1, 0]} />
-            <AbstractMesh position={[2, -1, 0.8]} />
-            <AbstractMesh position={[2, -1, 1.6]} />
-            <AbstractMesh position={[2, -1, 2.4]} />
-            <AbstractMesh position={[2, -1, 3.2]} />
-
-            <AbstractMesh position={[-1, -1, -0.8]} />
-            <AbstractMesh position={[-1, -1, -1.6]} />
-            <AbstractMesh position={[-1, -1, -2.4]} />
-            <AbstractMesh position={[-1, -1, -3.2]} />
-            <AbstractMesh position={[-1, -1, 0]} />
-            <AbstractMesh position={[-1, -1, 0.8]} />
-            <AbstractMesh position={[-1, -1, 1.6]} />
-            <AbstractMesh position={[-1, -1, 2.4]} />
-            <AbstractMesh position={[-1, -1, 3.2]} />
-
-            <AbstractMesh position={[-2, -1, -0.8]} />
-            <AbstractMesh position={[-2, -1, -1.6]} />
-            <AbstractMesh position={[-2, -1, -2.4]} />
-            <AbstractMesh position={[-2, -1, -3.2]} />
-            <AbstractMesh position={[-2, -1, 0]} />
-            <AbstractMesh position={[-2, -1, 0.8]} />
-            <AbstractMesh position={[-2, -1, 1.6]} />
-            <AbstractMesh position={[-2, -1, 2.4]} />
-            <AbstractMesh position={[-2, -1, 3.2]} /> */}
 
             {/* <OrbitControls enableZoom={false} /> */}
         </Canvas>

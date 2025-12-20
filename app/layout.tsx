@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron, Tomorrow, Quantico, Major_Mono_Display, Spectral, Agdasima } from "next/font/google";
 import "./globals.css";
+import SmoothScrolling from "@/components/SmoothScrolling"; 
 
 const OrbitronFont = Orbitron({
   subsets: ["latin"],
@@ -55,8 +56,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-x-clip">
       <body
+        suppressHydrationWarning
         className={`    
           ${OrbitronFont.variable}
           ${TomorrowFont.variable}
@@ -65,9 +67,10 @@ export default function RootLayout({
           ${SpectralFont.variable}
           ${AgdasimaFont.variable}
           antialiased
+          overflow-x-clip
           `}
       >
-        {children}
+        <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
   );
