@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Orbitron, Tomorrow, Quantico, Major_Mono_Display, Spectral, Agdasima } from "next/font/google";
+import { Orbitron, Quantico } from "next/font/google";
 import "./globals.css";
-import SmoothScrolling from "@/components/SmoothScrolling"; 
+import SmoothScrolling from "@/components/SmoothScrolling";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
 
 const OrbitronFont = Orbitron({
   subsets: ["latin"],
@@ -12,40 +12,12 @@ const OrbitronFont = Orbitron({
   display: "swap",
 });
 
-// const TomorrowFont = Tomorrow({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "700", "900"],
-//   variable: "--font-tomorrow",
-//   display: "swap",
-// });
-
 const QuanticoFont = Quantico({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-quantico",
   display: "swap",
 });
-
-// const MajorMonoDisplayFont = Major_Mono_Display({
-//   subsets: ["latin"],
-//   weight: ["400"],
-//   variable: "--font-major-mono-display",
-//   display: "swap",
-// });
-
-// const SpectralFont = Spectral({
-//   subsets: ["latin"],
-//   weight: ["200", "300", "400", "500", "600", "700", "800"],
-//   variable: "--font-spectral",
-//   display: "swap",
-// });
-
-// const AgdasimaFont = Agdasima({
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-//   variable: "--font-agdasima",
-//   display: "swap",
-// });
 
 export const metadata: Metadata = {
   title: "Wortex Studio",
@@ -68,10 +40,9 @@ export default function RootLayout({
           overflow-x-clip
           `}
       >
-        <Header/>
-        {/* {children} */}
+        <Header />
         <SmoothScrolling>{children}</SmoothScrolling>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
