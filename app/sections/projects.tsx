@@ -4,7 +4,7 @@
 
 import React, { useRef, useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
-import ProjectCards from '@/components/ProjectCards';
+import ProjectCards from '@/app/components/ProjectCards';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 

@@ -58,8 +58,8 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import LongCubesBackground from "@/components/LongCubesBackground";
-import About from "@/sections/about"
+import LongCubesBackground from "@/app/components/LongCubesBackground";
+import About from "@/app/sections/about"
 
 export default function Hero() {
   const containerRef = useRef(null);

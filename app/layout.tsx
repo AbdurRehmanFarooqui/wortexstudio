@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Orbitron, Quantico } from "next/font/google";
 import "./globals.css";
-import SmoothScrolling from "@/components/SmoothScrolling";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SmoothScrolling from "@/app/components/SmoothScrolling";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 const OrbitronFont = Orbitron({
   subsets: ["latin"],

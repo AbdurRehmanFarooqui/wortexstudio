@@ -1,16 +1,16 @@
-import Header from "@/components/Header";
-import About from "@/sections/about";
-import Hero from "@/sections/hero";
-import Projects from "@/sections/projects";
-import Services from "@/sections/services";
-import Testimonials from "@/sections/textimonials";
-import Footer from "@/components/Footer"
-import TestCanvas from "@/components/TestCanvas";
-import LongCubesBackground from "@/components/LongCubesBackground"
-import Contact from "@/sections/contact";
-import Particles from "@/components/Particles";
+import Header from "@/app/components/Header";
+import About from "@/app/sections/about";
+import Hero from "@/app/sections/hero";
+import Projects from "@/app/sections/projects";
+import Services from "@/app/sections/services";
+import Testimonials from "@/app/sections/textimonials";
+import Footer from "@/app/components/Footer"
+import TestCanvas from "@/app/components/TestCanvas";
+import LongCubesBackground from "@/app/components/LongCubesBackground"
+import Contact from "@/app/sections/contact";
+import Particles from "@/app/components/Particles";
 
-import LogoStrip from '@/components/LogoStrip';
+import LogoStrip from '@/app/components/LogoStrip';
 
 
 
