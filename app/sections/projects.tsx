@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
             transition={{ delay: 0.5 }}
             className=''
           >
-            <Link href="/projects" className="group relative flex items-center gap-4">
+            <Link href="/portfolio" className="group relative flex items-center gap-4">
               <div className="flex flex-col items-end">
                 <span className="text-[10px] font-bold text-[#a600ff] uppercase tracking-[0.3em] leading-none mb-1">Explore</span>
                 <span className="text-sm font-orbitron text-white group-hover:text-pink-500 transition-colors">ALL PROJECTS</span>

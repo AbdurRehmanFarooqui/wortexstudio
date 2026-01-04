@@ -85,21 +85,18 @@ export default function Hero() {
   return (
     // containerRef must be on a wrapper that allows for scrolling context
     <main ref={containerRef} className="relative h-[250vh] bg-black ">
-
       {/* Sticky wrapper: keeps the background and text fixed while we scroll the 200vh */}
       <div className="sticky top-0 h-dvh w-full overflow-hidden flex flex-col">
 
         {/* 3D background */}
         <LongCubesBackground scrollYProgress={scrollYProgress} />
 
-
-
         {/* Center content */}
         <div className="flex-1 flex items-center justify-center pointer-events-none z-10">
           <motion.h1
             style={{ scale, y: textY }}
             className="text-9xl font-black flex flex-col text-center font-orbitron text-white select-none p-8"
-          >
+            >
             WORTEX
             <span className="text-4xl tracking-[24px] mt-4">STUDIO</span>
           </motion.h1>
