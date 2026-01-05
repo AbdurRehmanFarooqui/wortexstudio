@@ -677,7 +677,7 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-10 right-10 z-50 w-12 h-12 bg-zinc-900 border border-zinc-700 text-[#a600ff] flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(166,0,255,0.2)] hover:border-[#a600ff] transition-all group"
+            className="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-50 md:w-12 md:h-12 w-8 h-8 bg-zinc-900 border border-zinc-700 text-[#a600ff] flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(166,0,255,0.2)] hover:border-[#a600ff] transition-all group"
           >
             <FaArrowUp className="group-hover:-translate-y-1 transition-transform" />
           </motion.button>

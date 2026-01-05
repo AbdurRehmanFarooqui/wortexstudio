@@ -675,7 +675,7 @@ export default function Testimonials() {
         {/* Carousel */}
         <div className="relative px-4 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-[450px]">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {/* Desktop View: Show 3, center one is active */}
               {[-1, 0, 1].map((offset) => {
                 const index = (currentIndex + offset + testimonials.length) % testimonials.length;

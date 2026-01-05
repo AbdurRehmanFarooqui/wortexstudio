@@ -675,12 +675,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-6xl md:text-8xl font-black font-orbitron mb-6 tracking-tighter italic">
+          <h2 className="text-4xl md:text-8xl font-black font-orbitron mb-6 tracking-tighter italic">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-[#a600ff] to-pink-500">
               CONNECT
             </span>
           </h2>
-          <p className="text-zinc-400 text-lg max-w-xl mx-auto font-quantico uppercase tracking-widest">
+          <p className="text-zinc-400 text:md md:text-lg max-w-xl mx-auto font-quantico uppercase tracking-widest">
             Ready to breach the digital frontier? Let&apos;s build the future.
           </p>
         </motion.div>

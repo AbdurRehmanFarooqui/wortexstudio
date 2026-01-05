@@ -64,7 +64,7 @@ const Service: FC<{ title: string; height: number }> = ({ title, height }) => {
       <div className="relative flex flex-col items-center">
         {/* Connection Dot */}
         <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mb-[-3px] z-10 shadow-[0_0_10px_#6366f1]" />
-        
+
         <motion.div
           className="w-[1px] bg-gradient-to-b from-indigo-500 to-zinc-800"
           variants={lineElementVariant}
@@ -102,9 +102,9 @@ export default function Services() {
         <h2 className="font-orbitron text-5xl md:text-7xl font-black tracking-tighter text-white">
           CORE<span className="text-[#a600ff]"> SERVICES</span>
         </h2>
-        
-        <Link 
-          href="/" 
+
+        <Link
+          href="/services"
           className="group flex items-center gap-2 font-quantico text-zinc-500 hover:text-white transition-colors"
         >
           <span className="text-sm uppercase tracking-widest">Explore Full Stack</span>
@@ -115,7 +115,7 @@ export default function Services() {
       {/* The "Schematic" Wrapper */}
       <motion.div
         className="w-full max-w-5xl relative"
-      viewport={{ amount: 0.1 }}
+        viewport={{ amount: 0.1 }}
         variants={servicesWrapperVariants}
       >
         {/* Horizontal Line with Glow */}
@@ -130,7 +130,7 @@ export default function Services() {
 
         {/* Vertical Lines Grid */}
         <motion.div
-          className="flex w-full mt-[-0.5px]"
+          className="flex w-full mt-[-0.5px] flex-col md:flex-row"
           variants={verticalLinesContainerVariants}
         >
           <Service title="Web Development" height={100} />

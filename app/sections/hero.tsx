@@ -63,7 +63,7 @@ import About from "@/app/sections/about"
 
 export default function Hero() {
   const containerRef = useRef(null);
-
+  const windowwidth = typeof window !== "undefined" ? window.innerWidth:1;
   // 1. Track scroll progress of this specific section
   // target: the element to track
   // offset: ["start start", "end start"] means from when top of div hits top of screen 
@@ -75,16 +75,21 @@ export default function Hero() {
 
   // 2. Map scroll progress to scale and opacity
   // As scroll goes from 0 to 1, scale goes from 1 to 10 and opacity from 1 to 0
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 20, 200]);
+  // const scale = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 20, 200]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 20, 500]);
   const opacityAbout = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
   const scaleAbout = useTransform(scrollYProgress, [0.4, 0.6], [0.8, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.6], ["0%", "0%"]);
-
+ 
+  if(windowwidth > 800){
+    var textY = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 1, 1]);
+  }else{
+    textY = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 500, 4000]);
+  }
 
   return (
     // containerRef must be on a wrapper that allows for scrolling context
-    <main ref={containerRef} className="relative h-[250vh] bg-black ">
+    <main ref={containerRef} className="relative h-[300vh] bg-black ">
       {/* Sticky wrapper: keeps the background and text fixed while we scroll the 200vh */}
       <div className="sticky top-0 h-dvh w-full overflow-hidden flex flex-col">
 
@@ -95,24 +100,24 @@ export default function Hero() {
         <div className="flex-1 flex items-center justify-center pointer-events-none z-10">
           <motion.h1
             style={{ scale, y: textY }}
-            className="text-9xl font-black flex flex-col text-center font-orbitron text-white select-none p-8"
+            className="text-5xl md:text-7xl lg:text-9xl font-black flex flex-col text-center font-orbitron text-white select-none p-8"
             >
             WORTEX
-            <span className="text-4xl tracking-[24px] mt-4">STUDIO</span>
+            <span className="text-xl md:text-2xl lg:text-4xl tracking-[12px] md:tracking-[24px] mt-4 pl-6">STUDIO</span>
           </motion.h1>
         </div>
 
         {/* Bottom bar */}
         <motion.div
           style={{ opacity }} // Bottom bar fades out as we scroll
-          className="absolute bottom-0 left-0 px-24 py-16 w-full font-quantico flex text-white"
+          className="absolute bottom-0 left-0 md:px-24 py-16 w-full font-quantico flex md:flex-row flex-col-reverse text-white"
         >
           <span className="w-full flex justify-center">
             <Link href="#" className="border px-8 py-4 pointer-events-auto hover:bg-white hover:text-black transition-colors">
               Let's Build Together
             </Link>
           </span>
-          <span className="w-full flex justify-center items-center text-xl backdrop-blur-sm bg-black/10">
+          <span className="w-full flex justify-center items-center text-md py-4 md:text-xl">
             Where Imagination Meets Innovation
           </span>
           <span className="w-full" />

@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
       ref={targetRef} 
       className="relative h-[400vh] bg-black overflow-clip"
     >
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col pt-28 md:pt-0 md:justify-center overflow-hidden">
         
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] font-orbitron select-none pointer-events-none">
@@ -62,11 +62,11 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Header */}
-        <div className="relative z-10 mb-12 px-20">
-          <motion.h2 initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-orbitron text-5xl md:text-8xl font-black tracking-tighter text-white">
+        <div className="relative z-10 mb-12 px-10 md:px-20">
+          <motion.h2 initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-orbitron text-4xl md:text-8xl font-black tracking-tighter text-white">
             PROJECTS<span className="text-[#a600ff]">.</span>
           </motion.h2>
-          <motion.p initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-quantico text-indigo-400 uppercase tracking-[0.3em] text-sm ml-2">
+          <motion.p initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-quantico text-indigo-400 uppercase tracking-[0.3em] text-sm">
             Selected Digital Artifacts
           </motion.p>
         </div>
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
         {/* Horizontal Track */}
         <motion.div 
           ref={scrollRef} 
-          className="flex items-center px-10" 
+          className="flex items-center px-4 md:px-10" 
           style={{ x }}
         >
           {projectData.map((project, i) => (
@@ -84,12 +84,12 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Bottom UI Elements */}
-        <div className="absolute bottom-12 md:bottom-20 left-10 right-10 flex justify-between items-end px-20">
+        <div className="absolute bottom-12 md:bottom-20 left-10 right-10 flex flex-col items-center md:flex-row md:justify-between md:items-end md:px-20 gap-8">
           
           {/* Progress Bar Container */}
           <div className="flex flex-col gap-2">
             <p className="font-quantico text-[10px] text-zinc-500 uppercase tracking-widest">Scroll Progress</p>
-            <div className="w-48 md:w-64 h-[2px] bg-white/10 overflow-hidden">
+            <div className="w-64 h-[2px] bg-white/10 overflow-hidden">
                 <motion.div 
                     className="h-full bg-gradient-to-r from-indigo-500 via-[#a600ff] to-pink-500" 
                     style={{ scaleX: scrollYProgress, transformOrigin: "left" }} 
