@@ -42,7 +42,7 @@ export default function ContactPage() {
             <span className="font-quantico text-[#a600ff] text-xs font-bold tracking-[0.5em] uppercase mb-4 block">
               Transmission Portal
             </span>
-            <h1 className="text-6xl md:text-8xl font-black font-orbitron tracking-tighter italic mb-6">
+            <h1 className="text-4xl md:text-8xl font-black font-orbitron tracking-tighter italic mb-6">
               CONTACT<span className="text-[#a600ff]">_</span>
             </h1>
             <p className="max-w-xl text-zinc-500 font-medium leading-relaxed">

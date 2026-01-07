@@ -131,7 +131,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({
   liveUrl = "#"
 }) => {
   return (
-    <div className='group relative flex-shrink-0 w-[380px] md:w-[500px] lg:w-[600px] aspect-[16/10] bg-zinc-950 border border-zinc-900 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#a600ff]/50 hover:shadow-[0_0_40px_-15px_rgba(166,0,255,0.4)] mx-6'>
+    <div className='group relative flex-shrink-0 w-[320px] md:w-[500px] lg:w-[600px] aspect-[16/10] bg-zinc-950 border border-zinc-900 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#a600ff]/50 hover:shadow-[0_0_40px_-15px_rgba(166,0,255,0.4)] mx-6'>
       
       {/* Background Image with Theme Gradient */}
       <div className="absolute inset-0 z-0">
@@ -145,7 +145,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Tags with Neon Borders */}
-      <div className="absolute top-6 left-6 z-20 flex gap-2">
+      <div className="absolute top-2 left-2 md:top-6 md:left-6 z-20 flex gap-2">
         {tags.map((tag, index) => (
           <span 
             key={index} 
@@ -157,17 +157,16 @@ const ProjectCards: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Content Section */}
-      <div className='relative z-20 h-full p-8 flex flex-col justify-end'>
-        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-          <p className="text-pink-500 font-quantico text-xs uppercase tracking-[0.3em] mb-2 font-bold">
+      <div className='relative z-20 h-full p-4 md:p-8 flex flex-col justify-end'>
+        <div className="md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          <p className="text-pink-500 font-quantico text-xs uppercase tracking-[0.3em] md:mb-2 font-bold">
             {category}
           </p>
-          <h3 className="text-3xl md:text-4xl font-black font-orbitron text-white mb-6 tracking-tighter">
+          <h3 className="text-2xl md:text-4xl font-black font-orbitron text-white mb-0 md:mb-6 tracking-tighter">
             {title}
           </h3>
-          
           {/* Action Buttons with Gradient Hover */}
-          <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+          <div className="hidden md:flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
             <a 
               href={liveUrl} 
               className="flex items-center gap-2 text-xs font-black uppercase tracking-widest bg-white text-black px-6 py-3 rounded-full hover:bg-gradient-to-r hover:from-indigo-500 hover:to-[#a600ff] hover:text-white transition-all"

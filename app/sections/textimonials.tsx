@@ -603,7 +603,7 @@ function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial; 
         </div>
 
         {/* Content */}
-        <p className="text-zinc-300 text-lg leading-relaxed font-medium italic mb-8 flex-grow">
+        <p className="text-zinc-300 text-md md:text-lg leading-relaxed font-medium italic mb-8 flex-grow">
           &quot;{testimonial.content}&quot;
         </p>
 
@@ -654,26 +654,26 @@ export default function Testimonials() {
   }, [autoplay, testimonials.length]);
 
   return (
-    <section className="relative py-24 px-6 bg-black overflow-hidden">
+    <section className="relative py-24 md:px-6 bg-black overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#a600ff]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center md:mb-20">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{amount: 1}}>
             <span className="font-quantico text-[#a600ff] text-sm font-bold tracking-[0.4em] uppercase mb-4 block">
               System Validation
             </span>
-            <h2 className="text-5xl md:text-7xl font-black font-orbitron text-white mb-6 tracking-tighter italic">
+            <h2 className="text-4xl md:text-7xl font-black font-orbitron text-white mb-6 tracking-tighter italic text-center">
               CLIENT <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-500">FEEDBACK</span>
             </h2>
           </motion.div>
         </div>
 
         {/* Carousel */}
-        <div className="relative px-4 md:px-12">
+        <div className="relative px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-[450px]">
             <AnimatePresence>
               {/* Desktop View: Show 3, center one is active */}
@@ -692,16 +692,16 @@ export default function Testimonials() {
           </div>
 
           {/* Nav Buttons */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none">
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-2 md:px-0">
             <button 
               onClick={() => { setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length); setAutoplay(false); }}
-              className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all pointer-events-auto shadow-2xl"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all pointer-events-auto shadow-2xl"
             >
               <FaChevronLeft />
             </button>
             <button 
               onClick={() => { setCurrentIndex((prev) => (prev + 1) % testimonials.length); setAutoplay(false); }}
-              className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all pointer-events-auto shadow-2xl"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all pointer-events-auto shadow-2xl"
             >
               <FaChevronRight />
             </button>
@@ -709,7 +709,7 @@ export default function Testimonials() {
         </div>
 
         {/* Progress & Controls */}
-        <div className="mt-16 flex flex-col items-center gap-8">
+        <div className="mt-2 md:mt-16 flex flex-col items-center gap-8">
           <div className="flex gap-3">
             {testimonials.map((_, i) => (
               <button

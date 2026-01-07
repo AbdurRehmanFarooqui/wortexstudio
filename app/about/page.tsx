@@ -37,10 +37,10 @@ const AboutPage = () => {
           <span className="font-quantico text-[#a600ff] text-xs font-bold tracking-[0.5em] uppercase mb-4 block">
             Studio Profile
           </span>
-          <h1 className="text-7xl md:text-9xl font-black font-orbitron tracking-tighter mb-8 italic">
+          <h3 className="text-6xl md:text-9xl font-black font-orbitron tracking-tighter mb-8 italic">
             ABOUT<span className="text-[#a600ff]">.</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-zinc-500 text-lg md:text-xl font-medium leading-relaxed">
+          </h3>
+          <p className="max-w-2xl mx-auto text-zinc-500 text-md md:text-xl font-medium leading-relaxed">
             Wortex is a digital construction studio at the intersection of 
             <span className="text-zinc-900 font-bold"> high-performance engineering </span> 
             and immersive visual art.
@@ -54,13 +54,13 @@ const AboutPage = () => {
         {/* Mission */}
         <motion.div 
           {...fadeUp}
-          className="group relative p-10 border border-zinc-100 rounded-[2rem] bg-zinc-50/50 hover:bg-white hover:shadow-2xl hover:shadow-[#a600ff]/5 hover:border-[#a600ff]/20 transition-all duration-500"
+          className="group relative p-4 md:p-10 border border-zinc-100 rounded-[1rem] md:rounded-[2rem] bg-zinc-50/50 hover:bg-white shadow-xl shadow-[#000]/10  hover:shadow-2xl hover:shadow-[#a600ff]/20 hover:border-[#a600ff]/20 transition-all duration-500"
         >
           <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-[#a600ff]">
             <Target size={24} />
           </div>
-          <h3 className="font-orbitron text-2xl font-bold mb-4 tracking-tight">Our Mission</h3>
-          <p className="text-zinc-500 leading-relaxed font-medium">
+          <h3 className="font-orbitron text-xl md:text-2xl font-bold mb-4 tracking-tight">Our Mission</h3>
+          <p className="text-zinc-500 leading-relaxed font-medium text-sm md:text-base">
             To empower forward-thinking brands by constructing digital artifacts that are not just seen, but experienced. We bridge the gap between complex logic and human emotion through precision design and scalable code.
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ const AboutPage = () => {
         <motion.div 
           {...fadeUp}
           transition={{ delay: 0.2 }}
-          className="group relative p-10 border border-zinc-100 rounded-[2rem] bg-zinc-50/50 hover:bg-white hover:shadow-2xl hover:shadow-[#a600ff]/5 hover:border-[#a600ff]/20 transition-all duration-500"
+          className="group relative p-4 md:p-10 border border-zinc-100 rounded-[1rem] md:rounded-[2rem] bg-zinc-50/50 hover:bg-white shadow-xl shadow-[#000]/10 hover:shadow-2xl hover:shadow-[#a600ff]/20 hover:border-[#a600ff]/20 transition-all duration-500"
         >
           <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-indigo-500">
             <Eye size={24} />
@@ -116,15 +116,15 @@ const AboutPage = () => {
       <section className="max-w-7xl mx-auto px-6 py-32 text-center">
         <motion.div 
           {...fadeUp}
-          className="bg-white border-2 border-zinc-900 rounded-[3rem] p-16 md:p-24 relative overflow-hidden"
+          className="bg-white border-2 border-zinc-900 rounded-[3rem] py-16 md:py-24 px-2 relative overflow-hidden"
         >
           {/* Decorative Purple Blobs */}
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#a600ff]/5 blur-[100px] rounded-full" />
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-indigo-500/5 blur-[100px] rounded-full" />
 
-          <h2 className="text-4xl md:text-6xl font-black font-orbitron tracking-tighter mb-8 italic">
-            READY TO START THE <br/> <span className="text-[#a600ff]">CONSTRUCTION?</span>
-          </h2>
+          <h3 className="text-3xl md:text-6xl font-black font-orbitron tracking-normal mb-8 italic">
+            READY TO START THE <br/> <span className="text-[#a600ff] text-2xl md:text-6xl">CONSTRUCTION?</span>
+          </h3>
           <button className="px-12 py-5 bg-zinc-900 text-white font-quantico font-bold rounded-2xl hover:bg-[#a600ff] transition-all duration-300 uppercase tracking-widest text-xs">
             Initiate Contact
           </button>

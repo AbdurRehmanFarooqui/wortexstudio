@@ -122,7 +122,7 @@ export default function LogoStrip() {
             TECH <span className="text-[#a600ff]">STACK</span>
         </motion.h2>
         <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent mt-4" />
-        <p className="font-quantico text-[10px] uppercase tracking-[0.5em] text-zinc-500 mt-4">
+        <p className="font-quantico text-[10px] uppercase tracking-[0.5em] text-zinc-500 mt-4 text-center">
             Powering the Digital Frontier
         </p>
       </div>

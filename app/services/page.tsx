@@ -47,7 +47,7 @@ function ServiceCard({ title, description, icon, tags, index }: ServiceProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative w-full md:w-[380px] bg-white border border-zinc-100 p-8 rounded-[2rem] hover:shadow-2xl hover:shadow-[#a600ff]/10 transition-all duration-500 overflow-hidden"
+      className="group relative w-full md:w-[380px] bg-white border border-zinc-100 p-8 rounded-[2rem] shadow-xl shadow-[#000]/10 hover:shadow-2xl hover:shadow-[#a600ff]/40 transition-all duration-500 overflow-hidden"
     >
       {/* Background Decorative Number */}
       <span className="absolute -top-4 -right-2 text-9xl font-black text-zinc-50 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity font-orbitron">
@@ -71,7 +71,7 @@ function ServiceCard({ title, description, icon, tags, index }: ServiceProps) {
         {/* System Tags */}
         <div className="flex flex-wrap gap-2 mb-8">
           {tags.map((tag) => (
-            <span key={tag} className="font-quantico text-[9px] uppercase tracking-widest px-3 py-1 bg-zinc-50 border border-zinc-100 rounded-full text-zinc-400">
+            <span key={tag} className="font-quantico text-[9px] uppercase tracking-widest px-3 py-1 bg-zinc-700 border border-zinc-100 rounded-full text-zinc-50">
               {tag}
             </span>
           ))}
@@ -140,9 +140,9 @@ export default function ServicesPage() {
             <span className="font-quantico text-[#a600ff] text-xs font-bold tracking-[0.5em] uppercase mb-4 block">
               Capabilities List
             </span>
-            <h2 className="text-6xl md:text-8xl font-black font-orbitron tracking-tighter italic text-zinc-900">
+            <h3 className="text-4xl md:text-8xl font-black font-orbitron tracking-tighter italic text-zinc-900">
               SERVICES<span className="text-[#a600ff]">_</span>
-            </h2>
+            </h3>
             <div className="w-24 h-1 bg-zinc-900 mx-auto mt-6" />
           </motion.div>
         </header>
@@ -162,7 +162,7 @@ export default function ServicesPage() {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="mt-32 pt-12 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-6"
+          className="mt-32 pt-12 border-t border-zinc-300 flex flex-col md:flex-row justify-between items-center gap-6"
         >
           <div className="font-quantico text-[10px] text-zinc-400 uppercase tracking-widest flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-[#a600ff] animate-pulse" />

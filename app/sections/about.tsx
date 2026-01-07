@@ -74,7 +74,7 @@ export default function About() {
           {/* Decorative Background Glow for MagnetLines */}
           <div className="absolute w-[40vmin] h-[40vmin] bg-indigo-600/50 blur-[100px] rounded-full" />
           
-          <div className="relative z-10 p-8 border border-black/5 rounded-3xl bg-white backdrop-blur-3xl hidden md:visible">
+          <div className="relative z-10 p-8 border border-black/5 rounded-3xl bg-white backdrop-blur-3xl hidden md:block">
             <MagnetLines
               rows={9}
               columns={9}

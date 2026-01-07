@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
       ref={targetRef} 
       className="relative h-[400vh] bg-black overflow-clip"
     >
-      <div className="sticky top-0 h-screen flex flex-col pt-28 md:pt-0 md:justify-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col pt-28 md:pt-28 justify-around overflow-hidden">
         
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] font-orbitron select-none pointer-events-none">
@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Header */}
-        <div className="relative z-10 mb-12 px-10 md:px-20">
+        <div className="relative z-10 md:mb-12 px-6 md:px-20">
           <motion.h2 initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-orbitron text-4xl md:text-8xl font-black tracking-tighter text-white">
             PROJECTS<span className="text-[#a600ff]">.</span>
           </motion.h2>
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
         {/* Horizontal Track */}
         <motion.div 
           ref={scrollRef} 
-          className="flex items-center px-4 md:px-10" 
+          className="flex items-center px-0 md:px-10" 
           style={{ x }}
         >
           {projectData.map((project, i) => (
@@ -84,7 +84,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Bottom UI Elements */}
-        <div className="absolute bottom-12 md:bottom-20 left-10 right-10 flex flex-col items-center md:flex-row md:justify-between md:items-end md:px-20 gap-8">
+        <div className=" bottom-12 md:bottom-20 left-10 right-10 flex flex-col items-center md:flex-row md:justify-between md:items-end md:px-20 gap-8">
           
           {/* Progress Bar Container */}
           <div className="flex flex-col gap-2">
