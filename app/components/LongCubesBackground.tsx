@@ -47,8 +47,8 @@ function InstancedGrid({ color }: { color: string }) {
             // const yAnim = 1 * Math.sin(time + pos.z);
 
             // 3. Set position for this specific instance
-            // tempObject.position.set(pos.x, 0, pos.z);
-            tempObject.position.set(pos.x, pos.z, 0);
+            tempObject.position.set(pos.x, 0, pos.z);
+            // tempObject.position.set(pos.x, pos.z, 0);
             tempObject.updateMatrix();
 
             // 4. Update the matrix at index 'i'
@@ -61,8 +61,8 @@ function InstancedGrid({ color }: { color: string }) {
 
     return (
         <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-            <boxGeometry args={[0.15, 0.15, 5]} />
-            {/* <boxGeometry args={[0.15, 5, ]} /> */}
+            {/* <boxGeometry args={[0.15, 0.15, 5]} /> */}
+            <boxGeometry args={[0.15, 5, ]} />
             <meshStandardMaterial color={color} roughness={0.9} />
         </instancedMesh>
     );
