@@ -20,7 +20,7 @@ function InstancedGrid({ color }: { color: string }) {
         const gridZend = -6;
         let gridX = 2;
 
-        for (let j = gridZstart; j >= gridZend; j=j-0.2) {
+        for (let j = gridZstart; j >= gridZend; j++) {
             // Stagger logic from your original code
             const isEven = j % 2 === 0;
             const startX = isEven ? -gridX : -gridX + 1;
