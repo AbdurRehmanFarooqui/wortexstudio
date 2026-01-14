@@ -30,7 +30,22 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Boxes, Fingerprint, Cpu, Globe, BarChart3 } from 'lucide-react';
+import {
+  Code2,
+  Boxes,
+  Fingerprint,
+  Cpu,
+  Globe,
+  BarChart3,
+  Smartphone,
+  Layout,
+  Brain,
+  Gamepad2,
+  Palette,
+  ShoppingCart,
+  Cloud,
+  TrendingUp,
+} from 'lucide-react';
 
 interface ServiceProps {
   title: string;
@@ -87,49 +102,123 @@ function ServiceCard({ title, description, icon, tags, index }: ServiceProps) {
 }
 
 export default function ServicesPage() {
+  // const services = [
+  //   {
+  //     title: "Web Engineering",
+  //     description: "High-performance React & Next.js systems engineered for speed, scalability, and seamless user interaction.",
+  //     icon: <Code2 size={24} />,
+  //     tags: ["React", "Next.js", "TypeScript"]
+  //   },
+  //   {
+  //     title: "Immersive 3D",
+  //     description: "Bringing depth to the web using Three.js and WebGL. We build interactive worlds inside the browser.",
+  //     icon: <Boxes size={24} />,
+  //     tags: ["Three.js", "Blender", "WebGL"]
+  //   },
+  //   {
+  //     title: "UI Architecture",
+  //     description: "Logic-driven design systems that prioritize user psychology and aesthetic precision in Figma.",
+  //     icon: <Fingerprint size={24} />,
+  //     tags: ["Figma", "Design Systems", "UX"]
+  //   },
+  //   {
+  //     title: "Backend Systems",
+  //     description: "Robust API development and database architecture that powers complex digital applications.",
+  //     icon: <Cpu size={24} />,
+  //     tags: ["Node.js", "Postgres", "Python"]
+  //   },
+  //   {
+  //     title: "Global SEO",
+  //     description: "Data-driven optimization strategies to ensure your digital presence is discovered across the frontier.",
+  //     icon: <Globe size={24} />,
+  //     tags: ["Strategy", "Analytics", "Growth"]
+  //   },
+  //   {
+  //     title: "Brand Logic",
+  //     description: "Constructing visual identities that translate your mission into a recognizable digital artifact.",
+  //     icon: <BarChart3 size={24} />,
+  //     tags: ["Branding", "Strategy", "Identity"]
+  //   }
+  // ];
   const services = [
     {
-      title: "Web Engineering",
-      description: "High-performance React & Next.js systems engineered for speed, scalability, and seamless user interaction.",
+      title: "Web Development",
+      description: "Modern, responsive web applications built with cutting-edge frameworks. We engineer digital experiences that perform flawlessly across all devices.",
       icon: <Code2 size={24} />,
-      tags: ["React", "Next.js", "TypeScript"]
+      tags: ["React", "Next.js", "Tailwind", "TypeScript"]
     },
     {
-      title: "Immersive 3D",
-      description: "Bringing depth to the web using Three.js and WebGL. We build interactive worlds inside the browser.",
+      title: "Mobile Development",
+      description: "Native and cross-platform mobile applications designed for intuitive user engagement and exceptional performance on iOS and Android.",
+      icon: <Smartphone size={24} />,
+      tags: ["React Native", "Flutter", "iOS", "Android"]
+    },
+    {
+      title: "WordPress Solutions",
+      description: "Custom WordPress development with optimized themes and plugins. We build scalable CMS solutions that empower content creators.",
+      icon: <Layout size={24} />,
+      tags: ["Custom Themes", "WooCommerce", "Plugins"]
+    },
+    {
+      title: "AI Integration",
+      description: "Intelligent solutions powered by machine learning and artificial intelligence. Automate processes and gain insights with smart algorithms.",
+      icon: <Brain size={24} />,
+      tags: ["Machine Learning", "Chatbots", "Automation"]
+    },
+    {
+      title: "Game Development",
+      description: "Immersive gaming experiences across platforms. From concept to deployment, we create engaging interactive entertainment.",
+      icon: <Gamepad2 size={24} />,
+      tags: ["Unity", "Unreal", "2D/3D", "Multiplayer"]
+    },
+    {
+      title: "3D Visualization",
+      description: "Bringing ideas to life with stunning 3D models and interactive visualizations. From product renders to architectural walkthroughs.",
       icon: <Boxes size={24} />,
-      tags: ["Three.js", "Blender", "WebGL"]
+      tags: ["Three.js", "Blender", "WebGL", "AR/VR"]
     },
     {
-      title: "UI Architecture",
-      description: "Logic-driven design systems that prioritize user psychology and aesthetic precision in Figma.",
+      title: "Graphic Design",
+      description: "Visual storytelling through compelling graphics, branding, and digital art. We craft identities that communicate your unique story.",
+      icon: <Palette size={24} />,
+      tags: ["Branding", "Illustration", "Print", "Digital"]
+    },
+    {
+      title: "UI/UX Design",
+      description: "User-centered design systems that blend aesthetic precision with psychological insight. We create interfaces that feel intuitive and delightful.",
       icon: <Fingerprint size={24} />,
-      tags: ["Figma", "Design Systems", "UX"]
+      tags: ["Figma", "User Research", "Prototyping", "Wireframing"]
     },
     {
-      title: "Backend Systems",
-      description: "Robust API development and database architecture that powers complex digital applications.",
+      title: "Full-Stack Development",
+      description: "End-to-end digital solutions with robust backend systems and seamless frontend experiences. Complete technical ecosystems built to scale.",
       icon: <Cpu size={24} />,
-      tags: ["Node.js", "Postgres", "Python"]
+      tags: ["Node.js", "Python", "Databases", "APIs"]
     },
     {
-      title: "Global SEO",
-      description: "Data-driven optimization strategies to ensure your digital presence is discovered across the frontier.",
-      icon: <Globe size={24} />,
-      tags: ["Strategy", "Analytics", "Growth"]
+      title: "E-Commerce Solutions",
+      description: "High-conversion online stores with secure payment systems and inventory management. We build platforms that drive sales and growth.",
+      icon: <ShoppingCart size={24} />,
+      tags: ["Shopify", "Magento", "Payment Gateways"]
     },
     {
-      title: "Brand Logic",
-      description: "Constructing visual identities that translate your mission into a recognizable digital artifact.",
-      icon: <BarChart3 size={24} />,
-      tags: ["Branding", "Strategy", "Identity"]
+      title: "DevOps & Deployment",
+      description: "Streamlined deployment pipelines and cloud infrastructure management. We ensure your applications run smoothly at scale.",
+      icon: <Cloud size={24} />,
+      tags: ["AWS", "Docker", "CI/CD", "Kubernetes"]
+    },
+    {
+      title: "Digital Marketing",
+      description: "Data-driven strategies to amplify your digital presence. From SEO to social media, we optimize your reach and engagement.",
+      icon: <TrendingUp size={24} />,
+      tags: ["SEO", "Content", "Analytics", "Campaigns"]
     }
   ];
 
   return (
     <div className="w-full min-h-screen bg-white pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Header Section */}
         <header className="text-center mb-24">
           <motion.div
@@ -150,7 +239,7 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <div className="flex flex-wrap gap-8 justify-center">
           {services.map((service, index) => (
-            <ServiceCard 
+            <ServiceCard
               key={index}
               index={index}
               {...service}
@@ -159,7 +248,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Capability Footer */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-32 pt-12 border-t border-zinc-300 flex flex-col md:flex-row justify-between items-center gap-6"

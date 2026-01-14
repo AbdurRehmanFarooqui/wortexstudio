@@ -42,11 +42,14 @@ const Projects: React.FC = () => {
   const x: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   const projectData: ProjectData[] = [
-    { title: "Quantum Render", tags: ["Next.js", "Three.js"], category: "3D Visualization" },
-    { title: "Neuro Sync", tags: ["React", "Python"], category: "AI Dashboard" },
-    { title: "Cyber Shell", tags: ["Rust", "Wasm"], category: "Security" },
-    { title: "Neon Pulse", tags: ["Framer", "React"], category: "Brand Design" },
-    { title: "Astra Engine", tags: ["C++", "Vulkan"], category: "Game Dev" },
+    { title: "Quantum Render", tags: ["Next.js", "Three.js"], category: "Web Development" },
+    { title: "Neuro Sync", tags: ["React", "Python"], category: "Web Development" },
+    { title: "Cyber Shell", tags: ["Flutter", "Dart"], category: "Mobile Development" },
+    // { title: "Neon Pulse", tags: ["Framer", "React"], category: "Brand Design" },
+    // { title: "Astra Engine", tags: ["C++", "Vulkan"], category: "Game Dev" },
+    { title: "Crystal Studio", tags: ["Figma", "Illustrator"], category: "UI/UX Design" },
+    { title: "Beast Burger", tags: ["Figma", "Illustrator"], category: "UI/UX Design" },
+    { title: "Astra Engine", tags: ["Canva", "Photoshop"], category: "Graphic Design" },
   ];
 
   return (
@@ -63,10 +66,10 @@ const Projects: React.FC = () => {
 
         {/* Header */}
         <div className="relative z-10 md:mb-12 px-6 md:px-20">
-          <motion.h2 initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-orbitron text-4xl md:text-8xl font-black tracking-tighter text-white">
+          <motion.h2 initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} viewport={{amount: 0.5}} transition={{ duration: 0.6 }} className="font-orbitron text-4xl md:text-8xl font-black tracking-tighter text-white">
             PROJECTS<span className="text-[#a600ff]">.</span>
           </motion.h2>
-          <motion.p initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{amount: 1}} transition={{ duration: 1 }} className="font-quantico text-indigo-400 uppercase tracking-[0.3em] text-sm">
+          <motion.p initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{amount: 0.5}} transition={{ duration: 0.6 }} className="font-quantico text-indigo-400 uppercase tracking-[0.3em] text-sm">
             Selected Digital Artifacts
           </motion.p>
         </div>
@@ -80,7 +83,6 @@ const Projects: React.FC = () => {
           {projectData.map((project, i) => (
             <ProjectCards key={i} {...project} />
           ))}
-          <ProjectCards title="Vortex Core" category="Web Design" tags={["Typescript"]} />
         </motion.div>
 
         {/* Bottom UI Elements */}

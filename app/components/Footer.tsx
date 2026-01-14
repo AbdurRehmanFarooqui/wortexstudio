@@ -719,11 +719,11 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <h3 className="font-orbitron text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Navigation</h3>
             <ul className="space-y-2">
-              <AnimatedFooterLink name="Projects" href="#projects" />
-              <AnimatedFooterLink name="Services" href="#services" />
-              <AnimatedFooterLink name="Process" href="#process" />
-              <AnimatedFooterLink name="About" href="#about" />
-              <AnimatedFooterLink name="Contact" href="#contact" />
+              <AnimatedFooterLink name="Projects" href="portfolio" />
+              <AnimatedFooterLink name="Services" href="services" />
+              {/* <AnimatedFooterLink name="Process" href="#process" /> */}
+              <AnimatedFooterLink name="About" href="about" />
+              <AnimatedFooterLink name="Contact" href="contact" />
             </ul>
           </div>
 
