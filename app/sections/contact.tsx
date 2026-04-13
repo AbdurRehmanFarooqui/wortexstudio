@@ -662,7 +662,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-rea
 
 export default function Contact() {
   return (
-    <section className="relative bg-black text-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-black text-white py-24 px-6 overflow-hidden pb-60">
       {/* Decorative Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/10 blur-[120px] rounded-full pointer-events-none" />

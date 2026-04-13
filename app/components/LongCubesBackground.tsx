@@ -3,7 +3,7 @@ import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-// import { useControls } from 'leva'
+import { useControls } from 'leva'
 import { useTransform, useSpring, MotionValue } from "framer-motion";
 const tempObject = new THREE.Object3D();
 interface ScrollProps {
@@ -104,11 +104,13 @@ function CameraRig({ scrollYProgress }: ScrollProps) {
 }
 
 export default function HeroBackground({ scrollYProgress }: { scrollYProgress?: any }) {
-    // const { meshColor, lightColor, lightColor2 } = useControls({
+    // const { meshColor, directionalLightColor, directionalLightColor2, spotlightColor, spotlightColor2 } = useControls({
     //     meshColor: '#ffffff',
     //     // lightColor: '#ffffff',
-    //     lightColor: '#a600ff',
-    //     lightColor2: '#ffffff'
+    //     directionalLightColor: '#000000',
+    //     directionalLightColor2: '#000000',
+    //     spotlightColor: '#000000',
+    //     spotlightColor2: '#a600ff'
     // });
 
     return (
@@ -123,7 +125,26 @@ export default function HeroBackground({ scrollYProgress }: { scrollYProgress?: 
 
             <fog attach="fog" args={["black", 0, 15]} />
             {/* Replaces the point lights for that high-performance look */}
+            {/* <spotLight
+                position={[0, 5, 6]}
+                intensity={200}
+                color={spotlightColor}
+                // angle={0.5}
+                angle={Math.PI / 4}
+                penumbra={1}
+                decay={2}
+            /> */}
             <spotLight
+                position={[0, -3, 6]}
+                intensity={100}
+                color="#a600ff"
+                // angle={0.5}
+                angle={Math.PI / 4}
+                penumbra={1}
+                decay={2}
+            />
+            
+            {/* <spotLight
                 position={[0, -3, 6]}
                 intensity={25}
                 color='#a600ff'
@@ -131,11 +152,25 @@ export default function HeroBackground({ scrollYProgress }: { scrollYProgress?: 
                 angle={Math.PI / 4}
                 penumbra={1}
                 decay={2}
-            />
+            /> */}
 
+            {/* <directionalLight
+                position={[-5, 5, 5]}
+                intensity={25}
+                color={directionalLightColor2}
+            /> */}
+            {/* <directionalLight
+                position={[5, 5, 5]}
+                intensity={25}
+                color={directionalLightColor}
+            /> */}
+
+            {/* <ambientLight intensity={0.02} color='#ffffff' /> */}
+            
 
             {/* The high-performance grid */}
             <InstancedGrid color='#ffffff' />
+            {/* <InstancedGrid color={meshColor} /> */}
 
         </Canvas>
     );

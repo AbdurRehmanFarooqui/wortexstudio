@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
       ref={targetRef} 
       className="relative h-[400vh] bg-black overflow-clip"
     >
-      <div className="sticky top-0 h-screen flex flex-col pt-28 md:pt-28 justify-around overflow-hidden">
+      <div className="sticky top-0 h-screen md:my-32 flex flex-col pt-12 md:pt-28 justify-around overflow-hidden">
         
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] font-orbitron select-none pointer-events-none">

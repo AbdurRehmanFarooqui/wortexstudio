@@ -133,11 +133,11 @@ export default function Testimonials() {
   }, [autoplay, testimonials.length]);
 
   return (
-    <section className="relative py-24 md:px-6 bg-black overflow-hidden">
+    <section className="relative py-32 md:py-60 md:px-6 bg-black overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#a600ff]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
-
+      
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-20">
@@ -225,7 +225,7 @@ export default function Testimonials() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 pt-16 border-t border-zinc-900">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 py-16 border-y border-zinc-800">
           {[
             { label: "Avg Rating", val: "4.9/5", color: "text-[#a600ff]" },
             { label: "Total Nodes", val: "250+", color: "text-indigo-400" },
@@ -241,7 +241,10 @@ export default function Testimonials() {
       </div>
 
       {/* Blueprint Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(#1e1e1e_1px,transparent_1px)] [background-size:40px_40px] opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px] opacity-20 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-black to-transparent pointer-events-none" />
+
     </section>
   );
 }

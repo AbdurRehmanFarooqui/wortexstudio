@@ -246,7 +246,7 @@ const Service: FC<{ title: string; height: number; isMobile: boolean }> = ({ tit
       </div>
 
       <motion.div className="md:mt-6 px-4 text-center" variants={titleElementVariant}>
-        <h4 className="font-quantico text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-white leading-relaxed">
+        <h4 className="font-quantico text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-zinc-200 leading-relaxed">
           {title}
         </h4>
       </motion.div>
@@ -270,7 +270,7 @@ export default function Services() {
 
   return (
     <motion.div
-      className="relative flex flex-col items-center justify-start max-w-7xl mx-auto pt-40 px-6 bg-black"
+      className="relative flex flex-col items-center justify-center w-full h-screen mx-auto md:pt-40 px-6 bg-black"
       initial="hidden"
       animate={controls} // Bound to manual controls instead of whileInView
       onViewportEnter={(entry) => {
@@ -290,7 +290,7 @@ export default function Services() {
       // whileInView="visible"
       viewport={{ amount: 0.5 }} // Trigger earlier for better UX
     >
-      <div className="w-full max-w-5xl flex flex-col md:flex-row items-baseline justify-between mb-8 md:mb-16 gap-4">
+      <div className="w-full max-w-5xl flex flex-col md:flex-row items-baseline justify-between mb-8 md:mb-16 gap-4 z-10">
         <h2 className="font-orbitron text-4xl md:text-7xl font-black tracking-tighter text-white">
           CORE<span className="text-[#a600ff]"> SERVICES</span>
         </h2>
@@ -300,7 +300,7 @@ export default function Services() {
         </Link>
       </div>
 
-      <motion.div className="w-full max-w-5xl relative">
+      <motion.div className="w-full max-w-5xl relative z-10">
         <div className="w-full flex md:block">
           <div className="relative">
             <motion.div
@@ -327,7 +327,9 @@ export default function Services() {
         </div>
       </motion.div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(#1e1e1e_1px,transparent_1px)] [background-size:40px_40px] opacity-20 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(#efefef_1px,transparent_1px)] [background-size:40px_40px] opacity-20 pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px] opacity-20 pointer-events-none" /> */}
+      <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </motion.div>
   );
 }

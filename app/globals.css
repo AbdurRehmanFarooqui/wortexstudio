@@ -94,7 +94,6 @@
     color: white;
   }
 
-  /* You can add more sizes and color options */
 }
 
 :root {
@@ -241,3 +240,23 @@ h2{
 .animate-spin-slow-reverse {
   animation: spin-slow-reverse 25s linear infinite;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(200px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.element {
+  animation: fadeIn linear;
+  animation-timeline: view(); /* Modern browser support required */
+  animation-range: entry 20% cover 40%;
+}
+
+/* .animate-fadein-right {
+  animation: fadein-right 200s ease-in-out 1;
+}
+
+@keyframes fadein-right {
+  from { opacity: 0; transform: translateX(-200px); }
+  to { opacity: 1; transform: translateX(0px); }
+} */

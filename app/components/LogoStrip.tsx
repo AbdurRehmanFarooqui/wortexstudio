@@ -128,7 +128,8 @@ export default function LogoStrip() {
       </div>
 
       {/* Logo Loop Container */}
-      <div className='relative flex items-center h-32 border-y border-white/[0.03] bg-zinc-950/20 backdrop-blur-sm'>
+      <div className='relative flex items-center h-32 border-y border-white/[0.03] bg-black/1 backdrop-blur-sm'>
+      {/* <div className='relative flex items-center h-32 border-y border-white/[0.03] bg-zinc-950/20 backdrop-blur-sm'> */}
         
         {/* Decorative Scanner Line */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#a600ff]/50 to-transparent animate-pulse" />

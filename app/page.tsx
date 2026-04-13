@@ -9,7 +9,7 @@ import TestCanvas from "@/app/components/TestCanvas";
 import LongCubesBackground from "@/app/components/LongCubesBackground"
 import Contact from "@/app/sections/contact";
 import Particles from "@/app/components/Particles";
-
+import WhyChooseUs from "@/app/sections/whychoseus";
 import LogoStrip from '@/app/components/LogoStrip';
 
 
@@ -25,6 +25,7 @@ export default function Home() {
       {/* <About /> */}
       <Services />
       <Projects />
+      <WhyChooseUs/>
       <LogoStrip />
       <Testimonials />
       <Contact />

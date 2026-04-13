@@ -8,7 +8,7 @@ function SmoothScrolling({ children }: { children: React.ReactNode }) {
       lerp: 0.1,
       // duration: 2.5,
       smoothWheel: true,
-      syncTouch: true
+      // syncTouch: true
     }}>
       {children}
     </ReactLenis>
