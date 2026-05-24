@@ -1,19 +1,3 @@
-// import About from "@/sections/about";
-
-// export default function AboutPage(){
-//     return(
-//         <div className="w-full pt-32">
-//             <h2 className="text-center text-6xl">About</h2>
-//             <div className="flex flex-wrap  mx-auto justify-center py-10">
-
-//                 <About/>
-
-
-//             </div>
-//         </div>
-//     )
-// }
-
 "use client";
 
 import React from 'react';

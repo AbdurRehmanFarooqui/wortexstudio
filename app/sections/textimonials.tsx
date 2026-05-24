@@ -225,7 +225,7 @@ export default function Testimonials() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 py-16 border-y border-zinc-800">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 py-16 border-t border-zinc-800">
           {[
             { label: "Avg Rating", val: "4.9/5", color: "text-[#a600ff]" },
             { label: "Total Nodes", val: "250+", color: "text-indigo-400" },

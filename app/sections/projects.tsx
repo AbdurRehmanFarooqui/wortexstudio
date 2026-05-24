@@ -8,17 +8,27 @@ import ProjectCards from '@/app/components/ProjectCards';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-interface ProjectData {
+interface Project {
+  id: number;
   title: string;
-  tags: string[];
   category: string;
-  imageUrl?: string;
+  description?: string;
+  // image: string;
+  link?: string;
+  github?: string;
+  tags: string[];
+  portfolio_images: PortfolioImage[];
 }
 
-const Projects: React.FC = () => {
+interface PortfolioImage {
+  url: string;
+  index: number;
+}
+
+const Projects: React.FC<{ data: Project[] }> = ({ data }) => {
   const targetRef = useRef<HTMLElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  
+  console.log("Received project data:", data);
   const [scrollRange, setScrollRange] = useState(0);
 
   useLayoutEffect(() => {
@@ -41,23 +51,12 @@ const Projects: React.FC = () => {
 
   const x: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
-  const projectData: ProjectData[] = [
-    { title: "Quantum Render", tags: ["Next.js", "Three.js"], category: "Web Development" },
-    { title: "Neuro Sync", tags: ["React", "Python"], category: "Web Development" },
-    { title: "Cyber Shell", tags: ["Flutter", "Dart"], category: "Mobile Development" },
-    // { title: "Neon Pulse", tags: ["Framer", "React"], category: "Brand Design" },
-    // { title: "Astra Engine", tags: ["C++", "Vulkan"], category: "Game Dev" },
-    { title: "Crystal Studio", tags: ["Figma", "Illustrator"], category: "UI/UX Design" },
-    { title: "Beast Burger", tags: ["Figma", "Illustrator"], category: "UI/UX Design" },
-    { title: "Astra Engine", tags: ["Canva", "Photoshop"], category: "Graphic Design" },
-  ];
-
   return (
     <motion.section 
       ref={targetRef} 
       className="relative h-[400vh] bg-black overflow-clip"
     >
-      <div className="sticky top-0 h-screen md:my-32 flex flex-col pt-12 md:pt-28 justify-around overflow-hidden">
+      <div className="sticky top-0 h-screen md:my-36 flex flex-col pt-12 md:pt-28 justify-around overflow-hidden">
         
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] font-orbitron select-none pointer-events-none">
@@ -80,7 +79,7 @@ const Projects: React.FC = () => {
           className="flex items-center px-0 md:px-10" 
           style={{ x }}
         >
-          {projectData.map((project, i) => (
+          {data.map((project, i) => (
             <ProjectCards key={i} {...project} />
           ))}
         </motion.div>

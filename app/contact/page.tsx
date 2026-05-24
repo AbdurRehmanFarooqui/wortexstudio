@@ -1,23 +1,3 @@
-// import ProjectCards from "@/components/ProjectCards"
-// import Contact from "@/sections/contact"
-
-// export default function ContactPage(){
-//     return(
-//         <div className="w-full pt-32 ">
-//             <h2 className="text-center text-4xl">Contact</h2>
-//             <div className="flex flex-wrap max-w-7xl mx-auto justify-center py-10 ">
-                
-//                 <Contact/>
-
-//             </div>
-//         </div>
-//     )
-// }
-
-
-
-
-
 "use client";
 
 import React from 'react';

@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScrolling from "@/app/components/SmoothScrolling";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import BottomCTA from "./components/BottomCTA";
 
 const OrbitronFont = Orbitron({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
       >
         <Header />
         <SmoothScrolling>{children}</SmoothScrolling>
+        {/* <BottomCTA /> */}
         <Footer />
       </body>
     </html>

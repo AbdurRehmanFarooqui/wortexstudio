@@ -44,10 +44,10 @@ function InstancedGrid({ color }: { color: string }) {
 
         gridData.forEach((pos, i) => {
             // 2. Apply the animation (Sine wave)
-            // const yAnim = 1 * Math.sin(time + pos.z);
+            const yAnim = 0.1 * Math.sin(time + pos.z);
 
             // 3. Set position for this specific instance
-            tempObject.position.set(pos.x, 0, pos.z);
+            tempObject.position.set(pos.x, yAnim, pos.z);
             // tempObject.position.set(pos.x, pos.z, 0);
             tempObject.updateMatrix();
 
@@ -138,6 +138,7 @@ export default function HeroBackground({ scrollYProgress }: { scrollYProgress?: 
                 position={[0, -3, 6]}
                 intensity={100}
                 color="#a600ff"
+                // color="#8e51ff"
                 // angle={0.5}
                 angle={Math.PI / 4}
                 penumbra={1}

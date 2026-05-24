@@ -1,31 +1,3 @@
-
-
-// function ServiceCard(){
-//     return(
-//         <div className="w-80 h-50 bg-black m-5 rounded-md">
-
-//         </div>
-//     )
-// }
-
-// export default function ServicesPage(){
-//     return(
-//         <div className="w-full pt-32">
-//             <h2 className="text-center text-4xl">Services</h2>
-//             <div className="flex flex-wrap max-w-7xl mx-auto justify-center py-10">
-//                 <ServiceCard/>
-//                 <ServiceCard/>
-//                 <ServiceCard/>
-//                 <ServiceCard/>
-//                 <ServiceCard/>
-//                 <ServiceCard/>
-
-//             </div>
-//         </div>
-//     )
-// }
-
-
 "use client";
 
 import React from 'react';

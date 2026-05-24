@@ -1,113 +1,3 @@
-// 'use client'
-// import Link from "next/link";
-// import { useState, useEffect } from "react";
-// import { Menu, X } from "lucide-react";
-
-// const navigation = [
-//   // { name: "Home", href: "/" },
-//   { name: "Services", href: "/services", type: "text" },
-//   { name: "Portfolio", href: "/portfolio", type: "text" },
-//   { name: "./logo2.png", href: "/", type: "image" },
-//   { name: "About", href: "/about", type: "text" },
-//   { name: "Contact", href: "/contact", type: "text" },
-// ];
-
-// function LinkItem({ name, href }: { name: string, href: string }) {
-//   return (
-//     <Link
-//       className="text-xl italic md:text-base text-white/70 hover:text-white hover:scale-105 duration-200 tracking-[0.15em]"
-//       href={href}
-//     >
-//       {name}
-//     </Link>
-//   );
-// }
-
-// export default function Header() {
-//   const [navstate, setNavState] = useState(false);
-//   const [showHeader, setShowHeader] = useState(true);
-
-//   let lastScrollY = 0;
-
-//   useEffect(() => {
-//     const threshold = 180;
-
-//     const handleScroll = () => {
-//       const currentScrollY = window.scrollY;
-
-//       // Only trigger after threshold
-//       if (currentScrollY > threshold) {
-//         if (currentScrollY > lastScrollY) {
-//           // scrolling DOWN → hide
-//           setShowHeader(false);
-//         } else {
-//           // scrolling UP → show
-//           setShowHeader(true);
-//         }
-//       } else {
-//         // always show near top
-//         setShowHeader(true);
-//       }
-
-//       lastScrollY = currentScrollY;
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <header
-//       className={`fixed w-full top-0 left-0 z-50 px-8 h-18 font-quantico max-w-screen
-//       bg-black/80 shadow-xl shadow-black/10 backdrop-blur-md
-//       transition-all duration-300 ease-in-out
-//       ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
-//       `}
-//     >
-//       <div className="flex items-center justify-between md:justify-center h-full max-w-7xl mx-auto">
-
-//         <div className="block md:hidden text-white flex items-center text-xl cursor-pointer">
-//           <img src="./logo2.png" alt="" className="h-20" />
-//           Wortex
-//         </div>
-
-//         <nav className=" hidden md:flex justify-around text-sm w-[600px]">
-//           {navigation.map((items) => (
-//             <div key={items.name} className="md:flex items-center flex-1 justify-center">
-//               {items.type !== "image" && <LinkItem key={items.name} name={items.name} href={items.href} />}
-//               {items.type === "image" && <img src={items.name} alt="" className="h-20 hover:scale-105 duration-200 cursor-pointer" />}
-//             </div>
-//           ))}
-//         </nav>
-
-//         {/* Mobile Menu */}
-//         <nav
-//           style={{ visibility: navstate ? "visible" : "hidden" }}
-//           className={`flex flex-col items-center md:flex-row text-white md:gap-6 gap-6 fixed top-18 left-0 px-8 py-6 bg-black/70 h-screen w-screen z-40 transition-all duration-300 ease-in-out overflow-auto
-//           ${navstate ? "translate-x-0 opacity-100 pointer-events-auto" : "-translate-x-full opacity-0 pointer-events-none"}
-//       `}
-//           onClick={() => setNavState(false)}
-//         >
-//           <LinkItem key="home" name="Home" href="/" />
-//           {navigation.map((items) => (
-//             items.type !== "image" && <LinkItem key={items.name} name={items.name} href={items.href} />
-//           ))}
-//         </nav>
-
-//         <span
-//           className="text-white md:hidden cursor-pointer"
-//           onClick={() => setNavState(!navstate)}
-//         >
-//           {!navstate && <Menu />}
-//           {navstate && <X />}
-//         </span>
-//       </div>
-//     </header>
-//   );
-// }
-
-
 'use client'
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -116,7 +6,7 @@ import { Menu, X } from "lucide-react";
 const navigation = [
   { name: "Services", href: "/services", type: "text" },
   { name: "Portfolio", href: "/portfolio", type: "text" },
-  { name: "./logo2.png", href: "/", type: "image" },
+  { name: "/logo2.png", href: "/", type: "image" },
   { name: "About", href: "/about", type: "text" },
   { name: "Contact", href: "/contact", type: "text" },
 ];
@@ -254,6 +144,11 @@ export default function Header() {
         >
           {navstate ? <X size={32} className="animate-[spin_0.5s_ease-in-out_1]"/> : <Menu size={32} className="animate-[spin_0.5s_ease-in-out_1]"/>}
         </span>
+        {/* <span
+          className="absolute bg-white text-black hidden md:flex justify-center items-center cursor-pointer z-50 right-3 px-10 py-2 transition-all hover:text-[17px] duration-200" 
+        >
+          Get a Quote
+        </span> */}
       </div>
     </header>
   );

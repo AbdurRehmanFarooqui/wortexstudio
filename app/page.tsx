@@ -11,11 +11,14 @@ import Contact from "@/app/sections/contact";
 import Particles from "@/app/components/Particles";
 import WhyChooseUs from "@/app/sections/whychoseus";
 import LogoStrip from '@/app/components/LogoStrip';
+import BlobGradient from '@/app/components/BlobGradient';
+import ArcGradient from '@/app/components/ArcGradient';
+import { fetchPortfolioProjects } from "./actions";
 
 
 
-
-export default function Home() {
+export default async function Home() {
+  const projects = await fetchPortfolioProjects();
   return (
 
     <div className="bg-black">
@@ -23,9 +26,13 @@ export default function Home() {
       <Hero />
       {/* <div className="w-full h-full m-0 p-0 backdrop-blur-sm"> */}
       {/* <About /> */}
+        <BlobGradient>
       <Services />
-      <Projects />
-      <WhyChooseUs/>
+        </BlobGradient>
+        {/* <ArcGradient/> */}
+      <Projects data={projects} />
+
+          <WhyChooseUs/>
       <LogoStrip />
       <Testimonials />
       <Contact />
@@ -33,4 +40,4 @@ export default function Home() {
       {/* </div> */}
     </div>
   );
-}
+};
