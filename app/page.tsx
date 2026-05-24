@@ -30,7 +30,7 @@ export default async function Home() {
       <Services />
         </BlobGradient>
         {/* <ArcGradient/> */}
-      <Projects data={projects} />
+      <Projects data={projects || []} />
 
           <WhyChooseUs/>
       <LogoStrip />

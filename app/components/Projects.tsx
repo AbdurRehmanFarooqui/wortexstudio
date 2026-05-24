@@ -346,11 +346,18 @@ import ProjectCards from './ProjectCards';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
+interface PortfolioImage {
+  url: string;
+  index: number;
+}
+
 interface ProjectData {
+  id: number;
   title: string;
   tags: string[];
   category: string;
   imageUrl?: string;
+  portfolio_images: PortfolioImage[];
 }
 
 const Projects: React.FC = () => {
@@ -380,11 +387,11 @@ const Projects: React.FC = () => {
   const x: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   const projectData: ProjectData[] = [
-    { title: "Quantum Render", tags: ["Next.js", "Three.js"], category: "3D Visualization" },
-    { title: "Neuro Sync", tags: ["React", "Python"], category: "AI Dashboard" },
-    { title: "Cyber Shell", tags: ["Rust", "Wasm"], category: "Security" },
-    { title: "Neon Pulse", tags: ["Framer", "React"], category: "Brand Design" },
-    { title: "Astra Engine", tags: ["C++", "Vulkan"], category: "Game Dev" },
+    { id: 1, title: "Quantum Render", tags: ["Next.js", "Three.js"], category: "3D Visualization", portfolio_images: [{ url: "/logo.png", index: 0 }] },
+    { id: 2, title: "Neuro Sync", tags: ["React", "Python"], category: "AI Dashboard", portfolio_images: [{ url: "/logo.png", index: 0 }] },
+    { id: 3, title: "Cyber Shell", tags: ["Rust", "Wasm"], category: "Security", portfolio_images: [{ url: "/logo.png", index: 0 }] },
+    { id: 4, title: "Neon Pulse", tags: ["Framer", "React"], category: "Brand Design", portfolio_images: [{ url: "/logo.png", index: 0 }] },
+    { id: 5, title: "Astra Engine", tags: ["C++", "Vulkan"], category: "Game Dev", portfolio_images: [{ url: "/logo.png", index: 0 }] },
   ];
 
   return (
@@ -418,7 +425,7 @@ const Projects: React.FC = () => {
           {projectData.map((project, i) => (
             <ProjectCards key={i} {...project} />
           ))}
-          <ProjectCards title="Vortex Core" category="Web Design" tags={["Typescript"]} />
+          <ProjectCards id={6} title="Vortex Core" category="Web Design" tags={["Typescript"]} portfolio_images={[{ url: "/logo.png", index: 0 }]} />
         </motion.div>
 
         {/* Bottom UI Elements */}
