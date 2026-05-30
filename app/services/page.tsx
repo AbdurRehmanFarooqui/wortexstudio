@@ -361,8 +361,8 @@ export default function ServicesPage() {
               <div className="flex justify-center flex-wrap gap-2 mb-4">
                 {service.subServices.map((sub, subIndex) => (
                   <ServiceCard
-                    key={index}
-                    index={index}
+                    key={subIndex}
+                    index={subIndex}
                     {...sub}
                   />
                 ))}

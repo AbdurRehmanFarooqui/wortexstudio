@@ -29,6 +29,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group relative w-full lg:w-[calc(50%-1rem)] xl:w-[calc(33.33%-1.5rem)] mb-12"
     >
+      <a href={`/portfolio/${project.id}`} className="cursor-pointer group" >
       {/* Image Container */}
       <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-zinc-100 bg-zinc-50">
         <img
@@ -38,13 +39,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         />
 
         {/* Overlay Hover State */}
-        <div className="absolute inset-0 bg-zinc-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-          <a href={project.link} className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-zinc-900 hover:bg-[#a600ff] hover:text-white transition-all transform hover:scale-110 translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+        <div className="absolute inset-0 bg-zinc-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-start justify-end gap-4 p-4">
+          {project.link && (<a href={project.link} className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-zinc-900 hover:bg-[#a600ff] hover:text-white transition-all transform hover:scale-110 translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
             <ArrowUpRight size={20} />
-          </a>
-          <a href={project.github} className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-zinc-900 hover:bg-[#a600ff] hover:text-white transition-all transform hover:scale-110 translate-y-4 group-hover:translate-y-0 duration-300 delay-150">
+          </a>)}
+          {project.github && (<a href={project.github} className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-zinc-900 hover:bg-[#a600ff] hover:text-white transition-all transform hover:scale-110 translate-y-4 group-hover:translate-y-0 duration-300 delay-150">
             <Github size={20} />
-          </a>
+          </a>)}
         </div>
       </div>
 
@@ -75,13 +76,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ))}
         </div>
       </div>
+      </a>
     </motion.div>
   );
 }
 
 export default function PortfolioGrid({ initialProjects }: { initialProjects: any[] }) {
   const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Web Development', 'Product Design', 'UI Architecture', 'Branding', 'Backend Systems', 'Global SEO', 'Brand Logic'];
+  const categories = ['All', 'Web Development', '3D Visualization', 'AI Integration', 'Motion Design'];
 
   return (
     <>

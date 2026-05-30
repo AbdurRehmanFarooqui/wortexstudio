@@ -69,7 +69,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
           
           {/* Brand Identity */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-5 space-y-8">
             <div>
               <h2 className="text-4xl font-black font-orbitron tracking-tighter italic">
                 WORTEX<span className="text-[#a600ff]">.</span>
@@ -97,7 +97,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation with Hover Animation */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <h3 className="font-orbitron text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Navigation</h3>
             <ul className="space-y-2">
               <AnimatedFooterLink name="Projects" href="portfolio" />
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Expertise with Hover Animation */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-4 space-y-6">
             <h3 className="font-orbitron text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Expertise</h3>
             <ul className="space-y-2">
               <AnimatedFooterLink name="3D Visualization" href="#" />
@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="lg:col-span-3 space-y-6">
+          {/* <div className="lg:col-span-3 space-y-6">
             <h3 className="font-orbitron text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Newsletter</h3>
             <form className="relative group">
               <input
@@ -135,8 +135,8 @@ export default function Footer() {
             <div className="flex items-center gap-2">
                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
                <span className="text-[9px] font-quantico text-zinc-600 uppercase tracking-widest">Status: Connected</span>
-            </div>
-          </div>
+            </div> 
+          </div>*/}
 
         </div>
 
