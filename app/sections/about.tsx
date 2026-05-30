@@ -19,9 +19,9 @@ export default function About() {
   return (
     <section 
       ref={containerRef} 
-      className="relative min-h-screen bg-white flex items-center overflow-hidden py-24 px-6"
+      className="relative min-h-screen bg-white flex items-center overflow-clip py-8 md:py-24 px-6"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-7 gap-12 items-center">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-7 gap-8 md:gap-12 items-center">
         
         {/* Left Side: Interaction (The Magnet) */}
         <motion.div 
@@ -32,7 +32,7 @@ export default function About() {
           {/* <div className="absolute w-[40vmin] h-[40vmin] bg-indigo-600/50 blur-[100px] rounded-full" /> */}
           
           {/* <div className="relative z-10 p-8 border border-black/5 rounded-3xl bg-white backdrop-blur-3xl hidden md:block"> */}
-          <div className="relative z-10 p-8 rounded-3xl  md:block">
+          <div className="relative z-10 px-4 py-0 md:p-8 rounded-3xl block">
             {/* <MagnetLines
               rows={9}
               columns={9}
@@ -43,18 +43,20 @@ export default function About() {
               baseAngle={0}
               style={{ margin: "0rem auto" }}
             /> */}
-            <h2 className="text-7xl tracking-tighter leading-none" style={{  letterSpacing: "-1px"}}><span className="text-5xl tracking-normal leading-none">CREATIVE &</span> SOFTWARE <span className="text-7xl tracking-normal leading-none">AGENCY</span> </h2>
+            {/* <h2 className="text-7xl tracking-tighter leading-none" style={{  letterSpacing: "-1px"}}><span className="text-5xl tracking-normal leading-none">CREATIVE &</span> SOFTWARE <span className="text-7xl tracking-normal leading-none">AGENCY</span> </h2> */}
+            <h2 className="text-4xl text-center md:text-left md:text-7xl md:tracking-wide md:leading-tight uppercase pt-8">Premium 
+              <br /><span className=" tracking-widest leading-none text-indigo-500"> Web & 3D</span><br /> Studio</h2>
           </div>
         </motion.div>
 
         {/* Right Side: Narrative */}
-        <div className="lg:col-span-4 space-y-8">
+        <div className="lg:col-span-4 space-y-4">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h4 className="text-indigo-500 font-bold tracking-[0.3em] uppercase text-sm mb-4 font-quantico">
+            <h4 className="text-indigo-500 font-bold tracking-[0.3em] uppercase text-sm text-center md:text-left mb-2 md:mb-4 font-quantico">
               Our Philosophy
             </h4>
             
@@ -71,11 +73,9 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-zinc-400 text-xl md:text-2xl font-light leading-relaxed max-w-2xl"
+            className="text-zinc-500 text-base md:text-2xl font-light leading-relaxed max-w-2xl"
           >
-            From stunning visuals to powerful software, we create digital 
-            solutions that don't just function—they make an impact. We don't 
-            just build products; we craft experiences.
+            We build digital experiences where strong engineering meets cinematic visual design. Our focus is premium web interfaces, interactive 3D, and modern motion-driven experiences.
           </motion.p>
 
           {/* Experience Counter / Stats */}
@@ -83,7 +83,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
-            className="flex gap-12 pt-8 border-t border-zinc-900"
+            className="flex gap-12 pt-4 md:pt-8 border-t border-zinc-900"
           >
             <div>
               <p className="text-3xl font-black font-orbitron text-black">100%</p>

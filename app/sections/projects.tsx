@@ -55,6 +55,7 @@ const Projects: React.FC<{ data: Project[] }> = ({ data }) => {
     <motion.section 
       ref={targetRef} 
       className="relative h-[400vh] bg-black overflow-clip"
+      id="projects"
     >
       <div className="sticky top-0 h-screen md:my-36 flex flex-col pt-12 md:pt-28 justify-around overflow-hidden">
         

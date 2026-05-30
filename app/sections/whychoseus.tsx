@@ -52,9 +52,9 @@ const WhyChooseUs: React.FC = () => {
     ];
 
     return (
-        <section className="relative bg-background my-12 md:my-32 md:flex  justify-center overflow-clip max-w-7xl mx-auto bg-black overflow-visible">
+        <section className="relative bg-background my-12 md:my-32 md:flex  justify-center overflow-clip max-w-7xl mx-auto bg-black ">
 
-            <div className="pt-22 pb-25 text-center md:text-right md:h-screen flex items-center justify-center sticky top-0 w-1/2 z-20 ">
+            <div className="pt-22 pb-25 text-center md:text-right md:h-screen flex items-center justify-center sticky top-0 md:w-1/2 z-20 w-full">
 
                 <div className="absolute -left-1/2 w-[200%] h-full overflow-hidden">
 
@@ -71,7 +71,7 @@ const WhyChooseUs: React.FC = () => {
                     </filter>
                     </svg>
 
-                    <div className="absolute -left-[20%] w-full h-full bg-black overflow-hidden">
+                    <div className="hidden md:block absolute -left-[20%] w-full h-full bg-black overflow-hidden">
         
                         {/* 3. The Base Gradient (The Color) */}
                         <div 
@@ -101,8 +101,8 @@ const WhyChooseUs: React.FC = () => {
                     </h2>
 
                 </motion.div>
-                {/* <div className="absolute bottom-0 left-0 w-full h-25 bg-gradient-to-b from-black to-transparent pointer-events-none" /> */}
-                {/* <div className="absolute top-0 bottom-25 left-0 w-full bg-gradient-to-b from-black to-black pointer-events-none " /> */}
+                <div className="absolute bottom-0 left-0 w-full h-25 bg-linear-to-b from-black to-transparent pointer-events-none" />
+                <div className="absolute top-0 bottom-25 left-0 w-full bg-black pointer-events-none " />
             </div>
 
             <div className='pt-20 md:py-[20vh] w-full z-30'>

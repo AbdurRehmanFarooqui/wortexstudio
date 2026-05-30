@@ -17,6 +17,8 @@ import {
   ShoppingCart,
   Cloud,
   TrendingUp,
+  Move,
+  Megaphone,
 } from 'lucide-react';
 
 interface ServiceProps {
@@ -114,77 +116,211 @@ export default function ServicesPage() {
   // ];
   const services = [
     {
-      title: "Web Development",
-      description: "Modern, responsive web applications built with cutting-edge frameworks. We engineer digital experiences that perform flawlessly across all devices.",
-      icon: <Code2 size={24} />,
-      tags: ["React", "Next.js", "Tailwind", "TypeScript"]
+      title: "WebExperiences",
+      subServices: [
+        {
+          title: "Web Development",
+          description: "Modern, responsive web applications built with cutting-edge frameworks. We engineer digital experiences that perform flawlessly across all devices.",
+          icon: <Code2 size={24} />,
+          tags: ["React", "Next.js", "Tailwind", "TypeScript"]
+        },
+        {
+          title: "UI Architecture",
+          description: "Logic-driven design systems that prioritize user psychology and aesthetic precision in Figma.",
+          icon: <Fingerprint size={24} />,
+          tags: ["Figma", "Design Systems", "UX"]
+        },
+        {
+          title: "Full-Stack Development",
+          description: "End-to-end digital solutions with robust backend systems and seamless frontend experiences. Complete technical ecosystems built to scale.",
+          icon: <Cpu size={24} />,
+          tags: ["Node.js", "Python", "Databases", "APIs"]
+        }
+      ]
     },
     {
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications designed for intuitive user engagement and exceptional performance on iOS and Android.",
-      icon: <Smartphone size={24} />,
-      tags: ["React Native", "Flutter", "iOS", "Android"]
+      title: "Immersive Visuals", subServices: [
+        {
+          title: "3D Visualization",
+          description: "Bringing ideas to life with stunning 3D models and interactive visualizations. From product renders to architectural walkthroughs.",
+          icon: <Boxes size={24} />,
+          tags: ["Three.js", "Blender", "WebGL", "AR/VR"]
+        },
+        {
+          title: "Motion Design",
+          description: "Dynamic animations and transitions that bring interfaces to life. We create engaging motion graphics that enhance user experience.",
+          icon: <Move size={24} />,
+          tags: ["Animation", "After Effects", "Lottie"]
+        },
+        {
+          title: "Graphic Design",
+          description: "Visual storytelling through compelling graphics, branding, and digital art. We craft identities that communicate your unique story.",
+          icon: <Palette size={24} />,
+          tags: ["Branding", "Illustration", "Print", "Digital"]
+        }
+      ]
     },
     {
-      title: "WordPress Solutions",
-      description: "Custom WordPress development with optimized themes and plugins. We build scalable CMS solutions that empower content creators.",
-      icon: <Layout size={24} />,
-      tags: ["Custom Themes", "WooCommerce", "Plugins"]
+      title: "Smart Systems", subServices: [
+        {
+          title: "AI Integration",
+          description: "Intelligent solutions powered by machine learning and artificial intelligence. Automate processes and gain insights with smart algorithms.",
+          icon: <Brain size={24} />,
+          tags: ["Machine Learning", "Chatbots", "Automation"]
+        },
+        {
+          title: "Backend Systems",
+          description: "Robust API development and database architecture that powers complex digital applications.",
+          icon: <Cpu size={24} />,
+          tags: ["Node.js", "Postgres", "Python"]
+        },
+        {
+          title: "DevOps & Deployment",
+          description: "Streamlined deployment pipelines and cloud infrastructure management. We ensure your applications run smoothly at scale.",
+          icon: <Cloud size={24} />,
+          tags: ["AWS", "Docker", "CI/CD", "Kubernetes"]
+        }
+      ]
     },
     {
-      title: "AI Integration",
-      description: "Intelligent solutions powered by machine learning and artificial intelligence. Automate processes and gain insights with smart algorithms.",
-      icon: <Brain size={24} />,
-      tags: ["Machine Learning", "Chatbots", "Automation"]
+      title: "Additional Capabilities", subServices: [
+        {
+          title: "E-Commerce Solutions",
+          description: "High-conversion online stores with secure payment systems and inventory management. We build platforms that drive sales and growth.",
+          icon: <ShoppingCart size={24} />,
+          tags: ["Shopify", "Magento", "Payment Gateways"]
+        },
+                {
+          title: "Mobile apps",
+          description: "Native and cross-platform mobile applications designed for intuitive user engagement and exceptional performance on iOS and Android.",
+          icon: <Smartphone size={24} />,
+          tags: ["React Native", "Flutter", "iOS", "Android"]
+        },
+        {
+          title: "WordPress",
+          description: "Custom WordPress development with optimized themes and plugins. We build scalable CMS solutions that empower content creators.",
+          icon: <Layout size={24} />,
+          tags: ["Custom Themes", "WooCommerce", "Plugins"]
+        },
+                {
+          title: "Game Development",
+          description: "Immersive gaming experiences across platforms. From concept to deployment, we create engaging interactive entertainment.",
+          icon: <Gamepad2 size={24} />,
+          tags: ["Unity", "Unreal", "2D/3D", "Multiplayer"]
+        },
+                {
+          title: "Custom Software Solutions",
+          description: "Tailored software development to meet unique business needs, from concept to deployment.",
+          icon: <Code2 size={24} />,
+          tags: ["Custom Software", "Consulting", "Development"]
+        },
+        {
+          title: "Digital Marketing",
+          description: "Data-driven strategies to amplify your digital presence. From SEO to social media, we optimize your reach and engagement.",
+          icon: <Megaphone size={24} />,
+          tags: ["SEO", "Social Media", "Content Marketing"]
+        },
+        {
+          title: "Global SEO",
+          description: "Data-driven optimization strategies to ensure your digital presence is discovered across the frontier.",
+          icon: <Globe size={24} />,
+          tags: ["Strategy", "Analytics", "Growth"]
+        },
+        
+
+
+        {
+          title: "Data Analytics",
+          description: "Transforming data into actionable insights with advanced analytics and visualization techniques.",
+          icon: <BarChart3 size={24} />,
+          tags: ["Data Analysis", "Visualization", "Business Intelligence"]
+        },
+        {
+          title: "Brand Strategy",
+          description: "Constructing visual identities that translate your mission into a recognizable digital artifact.",
+          icon: <Fingerprint size={24} />,
+          tags: ["Branding", "Strategy", "Identity"]
+        },
+        {
+          title: "Performance Optimization",
+          description: "Fine-tuning applications for maximum speed and efficiency, ensuring a seamless user experience even under heavy load.",
+          icon: <TrendingUp size={24} />,
+          tags: ["Performance", "Optimization", "Scalability"]
+        }
+      ]
     },
-    {
-      title: "Game Development",
-      description: "Immersive gaming experiences across platforms. From concept to deployment, we create engaging interactive entertainment.",
-      icon: <Gamepad2 size={24} />,
-      tags: ["Unity", "Unreal", "2D/3D", "Multiplayer"]
-    },
-    {
-      title: "3D Visualization",
-      description: "Bringing ideas to life with stunning 3D models and interactive visualizations. From product renders to architectural walkthroughs.",
-      icon: <Boxes size={24} />,
-      tags: ["Three.js", "Blender", "WebGL", "AR/VR"]
-    },
-    {
-      title: "Graphic Design",
-      description: "Visual storytelling through compelling graphics, branding, and digital art. We craft identities that communicate your unique story.",
-      icon: <Palette size={24} />,
-      tags: ["Branding", "Illustration", "Print", "Digital"]
-    },
-    {
-      title: "UI/UX Design",
-      description: "User-centered design systems that blend aesthetic precision with psychological insight. We create interfaces that feel intuitive and delightful.",
-      icon: <Fingerprint size={24} />,
-      tags: ["Figma", "User Research", "Prototyping", "Wireframing"]
-    },
-    {
-      title: "Full-Stack Development",
-      description: "End-to-end digital solutions with robust backend systems and seamless frontend experiences. Complete technical ecosystems built to scale.",
-      icon: <Cpu size={24} />,
-      tags: ["Node.js", "Python", "Databases", "APIs"]
-    },
-    {
-      title: "E-Commerce Solutions",
-      description: "High-conversion online stores with secure payment systems and inventory management. We build platforms that drive sales and growth.",
-      icon: <ShoppingCart size={24} />,
-      tags: ["Shopify", "Magento", "Payment Gateways"]
-    },
-    {
-      title: "DevOps & Deployment",
-      description: "Streamlined deployment pipelines and cloud infrastructure management. We ensure your applications run smoothly at scale.",
-      icon: <Cloud size={24} />,
-      tags: ["AWS", "Docker", "CI/CD", "Kubernetes"]
-    },
-    {
-      title: "Digital Marketing",
-      description: "Data-driven strategies to amplify your digital presence. From SEO to social media, we optimize your reach and engagement.",
-      icon: <TrendingUp size={24} />,
-      tags: ["SEO", "Content", "Analytics", "Campaigns"]
-    }
+    // {
+    //   title: "Web Development",
+    //   description: "Modern, responsive web applications built with cutting-edge frameworks. We engineer digital experiences that perform flawlessly across all devices.",
+    //   icon: <Code2 size={24} />,
+    //   tags: ["React", "Next.js", "Tailwind", "TypeScript"]
+    // },
+    // {
+    //   title: "Mobile Development",
+    //   description: "Native and cross-platform mobile applications designed for intuitive user engagement and exceptional performance on iOS and Android.",
+    //   icon: <Smartphone size={24} />,
+    //   tags: ["React Native", "Flutter", "iOS", "Android"]
+    // },
+    // {
+    //   title: "WordPress Solutions",
+    //   description: "Custom WordPress development with optimized themes and plugins. We build scalable CMS solutions that empower content creators.",
+    //   icon: <Layout size={24} />,
+    //   tags: ["Custom Themes", "WooCommerce", "Plugins"]
+    // },
+    // {
+    //   title: "AI Integration",
+    //   description: "Intelligent solutions powered by machine learning and artificial intelligence. Automate processes and gain insights with smart algorithms.",
+    //   icon: <Brain size={24} />,
+    //   tags: ["Machine Learning", "Chatbots", "Automation"]
+    // },
+    // {
+    //   title: "Game Development",
+    //   description: "Immersive gaming experiences across platforms. From concept to deployment, we create engaging interactive entertainment.",
+    //   icon: <Gamepad2 size={24} />,
+    //   tags: ["Unity", "Unreal", "2D/3D", "Multiplayer"]
+    // },
+    // {
+    //   title: "3D Visualization",
+    //   description: "Bringing ideas to life with stunning 3D models and interactive visualizations. From product renders to architectural walkthroughs.",
+    //   icon: <Boxes size={24} />,
+    //   tags: ["Three.js", "Blender", "WebGL", "AR/VR"]
+    // },
+    // {
+    //   title: "Graphic Design",
+    //   description: "Visual storytelling through compelling graphics, branding, and digital art. We craft identities that communicate your unique story.",
+    //   icon: <Palette size={24} />,
+    //   tags: ["Branding", "Illustration", "Print", "Digital"]
+    // },
+    // {
+    //   title: "UI/UX Design",
+    //   description: "User-centered design systems that blend aesthetic precision with psychological insight. We create interfaces that feel intuitive and delightful.",
+    //   icon: <Fingerprint size={24} />,
+    //   tags: ["Figma", "User Research", "Prototyping", "Wireframing"]
+    // },
+    // {
+    //   title: "Full-Stack Development",
+    //   description: "End-to-end digital solutions with robust backend systems and seamless frontend experiences. Complete technical ecosystems built to scale.",
+    //   icon: <Cpu size={24} />,
+    //   tags: ["Node.js", "Python", "Databases", "APIs"]
+    // },
+    // {
+    //   title: "E-Commerce Solutions",
+    //   description: "High-conversion online stores with secure payment systems and inventory management. We build platforms that drive sales and growth.",
+    //   icon: <ShoppingCart size={24} />,
+    //   tags: ["Shopify", "Magento", "Payment Gateways"]
+    // },
+    // {
+    //   title: "DevOps & Deployment",
+    //   description: "Streamlined deployment pipelines and cloud infrastructure management. We ensure your applications run smoothly at scale.",
+    //   icon: <Cloud size={24} />,
+    //   tags: ["AWS", "Docker", "CI/CD", "Kubernetes"]
+    // },
+    // {
+    //   title: "Digital Marketing",
+    //   description: "Data-driven strategies to amplify your digital presence. From SEO to social media, we optimize your reach and engagement.",
+    //   icon: <TrendingUp size={24} />,
+    //   tags: ["SEO", "Content", "Analytics", "Campaigns"]
+    // }
   ];
 
   return (
@@ -209,31 +345,46 @@ export default function ServicesPage() {
         </header>
 
         {/* Services Grid */}
-        <div className="flex flex-wrap gap-8 justify-center">
+        <div className="flex flex-col gap-12 justify-center">
           {services.map((service, index) => (
-            <ServiceCard
+            <motion.div
               key={index}
-              index={index}
-              {...service}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="w-full border-t border-zinc-200 p-6"
+            >
+              <h4 className="font-orbitron text-lg md:text-3xl text-center font-bold mb-4 tracking-tight text-zinc-900 pt-4">
+                {service.title}
+              </h4>
+              <div className="flex justify-center flex-wrap gap-2 mb-4">
+                {service.subServices.map((sub, subIndex) => (
+                  <ServiceCard
+                    key={index}
+                    index={index}
+                    {...sub}
+                  />
+                ))}
+              </div>
+          </motion.div>
           ))}
-        </div>
-
-        {/* Capability Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-32 pt-12 border-t border-zinc-300 flex flex-col md:flex-row justify-between items-center gap-6"
-        >
-          <div className="font-quantico text-[10px] text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-[#a600ff] animate-pulse" />
-            All systems online and ready for deployment
           </div>
-          <p className="font-orbitron text-xs font-bold text-zinc-900 uppercase">
-            Custom requests available // contact@wortex.studio
-          </p>
-        </motion.div>
-      </div>
+              {/* Capability Footer */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="mt-32 pt-12 border-t border-zinc-300 flex flex-col md:flex-row justify-between items-center gap-6"
+              >
+                <div className="font-quantico text-[10px] text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#a600ff] animate-pulse" />
+                  All systems online and ready for deployment
+                </div>
+                <p className="font-orbitron text-xs font-bold text-zinc-900 uppercase">
+                  Custom requests available // contact@wortex.studio
+                </p>
+              </motion.div>
+            </div>
     </div>
-  );
+        );
 }

@@ -77,7 +77,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full top-0 left-0 z-50 px-8 h-18 font-quantico
+      className={`fixed max-w-screen w-full top-0 left-0 z-50 px-8 h-18 font-quantico
       bg-black/80 shadow-xl shadow-black/10 backdrop-blur-md
       transition-all duration-300 ease-in-out
       ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}

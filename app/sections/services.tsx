@@ -133,11 +133,16 @@ export default function Services() {
               visible: { transition: { staggerChildren: 0.1 } }
             }}
           >
-            <Service title="Web Development" height={100} isMobile={isMobile} />
+            <Service title="Web Engineering" height={100} isMobile={isMobile} />
+            <Service title="3D Visualization" height={180} isMobile={isMobile} />
+            <Service title="UI / Motion Design" height={100} isMobile={isMobile} />
+            <Service title="AI Integration" height={180} isMobile={isMobile} />
+            
+            {/* <Service title="Web Development" height={100} isMobile={isMobile} />
             <Service title="Mobile Apps" height={180} isMobile={isMobile} />
             <Service title="AI Integration" height={100} isMobile={isMobile} />
             <Service title="Graphic Design" height={180} isMobile={isMobile} />
-            <Service title="3D Visualization" height={100} isMobile={isMobile} />
+            <Service title="3D Visualization" height={100} isMobile={isMobile} /> */}
           </motion.div>
         </div>
       </motion.div>

@@ -31,14 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="overflow-x-clip">
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <body
         suppressHydrationWarning
         className={`    
           ${OrbitronFont.variable}
           ${QuanticoFont.variable}
           antialiased
-          overflow-x-clip
+          overflow-x-hidden
           `}
       >
         <Header />

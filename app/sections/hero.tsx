@@ -34,15 +34,15 @@ export default function Hero() {
 
   return (
     // containerRef must be on a wrapper that allows for scrolling context
-    <main ref={containerRef} className="relative h-[300vh] bg-black ">
+    <main ref={containerRef} className="relative h-[400vh] bg-black overflow-clip">
       {/* Sticky wrapper: keeps the background and text fixed while we scroll the 200vh */}
-      <div className="sticky top-0 h-dvh w-full overflow-hidden flex flex-col">
+      <div className="sticky top-0 h-dvh w-full flex flex-col overflow-clip">
 
         {/* 3D background */}
         <LongCubesBackground scrollYProgress={scrollYProgress} />
 
         {/* Center content */}
-        <div className="flex-1 flex items-center justify-center pointer-events-none z-10">
+        <div className="flex-1 flex items-center justify-center pointer-events-none z-10 overflow-clip">
           <motion.h1
             style={{ scale, y: textY }}
             className="text-5xl md:text-7xl lg:text-9xl font-black flex flex-col text-center font-orbitron text-white select-none p-8"
@@ -55,15 +55,26 @@ export default function Hero() {
         {/* Bottom bar */}
         <motion.div
           style={{ opacity }} // Bottom bar fades out as we scroll
-          className="absolute bottom-0 left-0 md:px-24 py-16 w-full font-quantico flex md:flex-row flex-col-reverse text-white"
+          className="absolute bottom-0 p-4 md:px-24 md:py-14 w-full font-quantico flex flex-col-reverse md:flex-col  text-white backdrop-blur-sm border-t border-white/16 bg-linear-to-tr from-black/10 to-white/8 overflow-clip"
         >
-          <span className="w-full flex justify-center">
-            <Link href="#" className="border px-8 py-4 pointer-events-auto hover:bg-white hover:text-black transition-colors">
-              Let's Build Together
+          <div className="w-full flex justify-center items-center gap-2 md:gap-4 text-xs md:text-base uppercase tracking-widest">
+          <span className="flex justify-center">
+            <Link href="#projects" className="border border-white/50 px-3 md:px-8 py-4 pointer-events-auto hover:bg-white hover:text-black transition-colors flex items-center justify-center text-center rounded-sm bg-transparent ">
+              View Selected Work
             </Link>
           </span>
-          <span className="w-full flex justify-center items-center text-md py-4 md:text-xl">
+          <span className="flex justify-center">
+            <Link href="/contact" className="border border-white/50 px-3 md:px-8 py-4 pointer-events-auto
+            bg-white text-black hover:text-white hover:bg-transparent transition-colors flex items-center justify-center text-center rounded-sm backdrop-blur-sm">
+              Start a Project
+            </Link>
+          </span>
+          </div>
+          {/* <span className="w-full flex justify-center items-center text-md py-4 md:text-xl">
             Where Imagination Meets Innovation
+          </span> */}
+          <span className="w-full flex justify-center text-center items-center text-md py-4 md:text-xl">
+            Web Engineering and 3D Visualization for Brands That Want More Than a Website
           </span>
           <span className="w-full" />
         </motion.div>
