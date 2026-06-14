@@ -21,10 +21,27 @@ const QuanticoFont = Quantico({
 });
 
 export const metadata: Metadata = {
+  // Sets your apple-mobile-web-app-title
+  appleWebApp: {
+    title: "Wortex Studio",
+  },
   title: "Wortex Studio",
   description: "Wortex Studio is a creative software agency crafting purposeful digital products and impactful experiences through design, development, and strategy.",
+  // Maps your link tags for icons
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  
+  // Maps your manifest link
+  manifest: "/site.webmanifest",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
