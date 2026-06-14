@@ -57,7 +57,7 @@ const Projects: React.FC<{ data: Project[] }> = ({ data }) => {
       className="relative h-[400vh] bg-black overflow-clip"
       id="projects"
     >
-      <div className="sticky top-0 h-screen md:my-36 flex flex-col pt-12 md:pt-28 justify-around overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col pt-12 md:pt-12 justify-around overflow-hidden">
         
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] font-orbitron select-none pointer-events-none">
@@ -65,7 +65,7 @@ const Projects: React.FC<{ data: Project[] }> = ({ data }) => {
         </div>
 
         {/* Header */}
-        <div className="relative z-10 md:mb-12 px-6 md:px-20">
+        <div className="relative z-10 md:mb-8 px-6 md:px-20">
           <motion.h2 initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} viewport={{amount: 0.5}} transition={{ duration: 0.6 }} className="font-orbitron text-4xl md:text-8xl font-black tracking-tighter text-white">
             PROJECTS<span className="text-[#a600ff]">.</span>
           </motion.h2>

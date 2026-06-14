@@ -113,10 +113,10 @@ export default function Testimonials() {
   const [autoplay, setAutoplay] = useState(true);
 
   const testimonials: Testimonial[] = [
-    { id: 1, name: "Sarah Johnson", role: "Product Manager", company: "TechCorp Inc.", content: "Working with WORTEX transformed our digital presence. Their attention to detail and innovative 3D solutions exceeded all expectations.", rating: 5, avatar: "https://i.pravatar.cc/150?u=sarah" },
-    { id: 2, name: "Michael Chen", role: "CEO & Founder", company: "StartUpXYZ", content: "Exceptional code quality and design. They delivered a scalable solution ahead of schedule. Truly a partner in our growth.", rating: 5, avatar: "https://i.pravatar.cc/150?u=mike" },
-    { id: 3, name: "Emma Rodriguez", role: "Art Director", company: "GlobalBrands", content: "Their technical expertise in WebGL and React is unmatched. They turned a vague concept into a stunning interactive reality.", rating: 5, avatar: "https://i.pravatar.cc/150?u=emma" },
-    { id: 4, name: "David Kim", role: "CTO", company: "InnovateLabs", content: "The team's ability to create immersive experiences is remarkable. They delivered beyond our wildest expectations.", rating: 5, avatar: "https://i.pravatar.cc/150?u=david" },
+    { id: 1, name: "", role: "Product Manager", company: "Vibe Cart", content: "Working with WORTEX transformed our digital presence. Their attention to detail and innovative 3D solutions exceeded all expectations.", rating: 5, avatar: "" },
+    { id: 2, name: "", role: "CEO & Founder", company: "ApnaMart", content: "Exceptional code quality and design. They delivered a scalable solution ahead of schedule. Truly a partner in our growth.", rating: 5, avatar: "" },
+    { id: 3, name: "", role: "", company: "Crystal Studio", content: "Their technical expertise in WebGL and React is unmatched. They turned a vague concept into a stunning interactive reality.", rating: 5, avatar: "" },
+    { id: 4, name: "", role: "", company: "", content: "The team's ability to create immersive experiences is remarkable. They delivered beyond our wildest expectations.", rating: 5, avatar: "" },
   ];
 
   const paginate = useCallback((direction: number) => {

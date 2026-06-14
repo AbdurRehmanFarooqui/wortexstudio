@@ -107,7 +107,7 @@ const WhyChooseUs: React.FC = () => {
 
             <div className='pt-20 md:py-[20vh] w-full z-30'>
                 {pointData.map((point, index) =>
-                    <Point data={point} />
+                    <Point data={point} key={index} />
                 )}
             </div>
         </section>

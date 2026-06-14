@@ -320,3 +320,14 @@ h2 {
   --animate-mesh-drift: mesh-drift 14s ease-in-out infinite;
   --animate-scanline: scanline 3s linear infinite;
 }
+
+@keyframes slideDown {
+  from {
+    top: 0px;
+    opacity: 0;
+  }
+  to {
+    top: 80px; /* equivalent to top-20 */
+    opacity: 1;
+  }
+}

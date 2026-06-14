@@ -30,11 +30,11 @@ const ProjectCards: React.FC<Project> = ({
   link = "#"
 }) => {
   return (
-    <div className='group relative flex-shrink-0 w-[320px] md:w-[500px] lg:w-[600px] aspect-[16/10] bg-zinc-950 border border-zinc-900 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#a600ff]/50 hover:shadow-[0_0_40px_-15px_rgba(166,0,255,0.4)] mx-6 cursor-pointer'>
+    <div className='group relative flex-shrink-0 w-[320px] md:w-[500px] lg:h-[40vh] lg:w-auto aspect-[16/10] bg-zinc-950 border border-zinc-900 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#a600ff]/50 hover:shadow-[0_0_40px_-15px_rgba(166,0,255,0.4)] mx-6 cursor-pointer'>
       
       {/* Background Image with Theme Gradient */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10" />
         <Image 
           src={portfolio_images[0]?.url || '/logo.png'} 
           alt={title}

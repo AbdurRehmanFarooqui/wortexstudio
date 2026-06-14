@@ -42,7 +42,7 @@ export default function Hero() {
         <LongCubesBackground scrollYProgress={scrollYProgress} />
 
         {/* Center content */}
-        <div className="flex-1 flex items-center justify-center pointer-events-none z-10 overflow-clip">
+        <div className="flex-1 flex items-center justify-center pointer-events-none z-10 overflow-clip pb-8">
           <motion.h1
             style={{ scale, y: textY }}
             className="text-5xl md:text-7xl lg:text-9xl font-black flex flex-col text-center font-orbitron text-white select-none p-8"
@@ -55,7 +55,7 @@ export default function Hero() {
         {/* Bottom bar */}
         <motion.div
           style={{ opacity }} // Bottom bar fades out as we scroll
-          className="absolute bottom-0 p-4 md:px-24 md:py-14 w-full font-quantico flex flex-col-reverse md:flex-col  text-white backdrop-blur-sm border-t border-white/16 bg-linear-to-tr from-black/10 to-white/8 overflow-clip"
+          className="absolute bottom-4 p-4 md:px-24 md:py-8 w-max max-w-full left-1/2 -translate-x-1/2 font-quantico flex flex-col-reverse md:flex-col text-white backdrop-blur-sm border-t border-white/16 bg-linear-to-tr from-black/10 to-white/8 overflow-clip rounded-lg"
         >
           <div className="w-full flex justify-center items-center gap-2 md:gap-4 text-xs md:text-base uppercase tracking-widest">
           <span className="flex justify-center">
@@ -73,10 +73,10 @@ export default function Hero() {
           {/* <span className="w-full flex justify-center items-center text-md py-4 md:text-xl">
             Where Imagination Meets Innovation
           </span> */}
-          <span className="w-full flex justify-center text-center items-center text-md py-4 md:text-xl">
+          <span className="w-full flex justify-center text-center items-center text-md pt-4 md:text-xl">
             Web Engineering and 3D Visualization for Brands That Want More Than a Website
           </span>
-          <span className="w-full" />
+          {/* <span className="w-full" /> */}
         </motion.div>
         <motion.div style={{ opacity: opacityAbout, scale: scaleAbout}} className="pointer-events-none z-11 absolute top-0 left-0 w-full h-full">
           <About />
